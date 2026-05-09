@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Typewriter Homepage Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --surface-lowest: #0a0e14;
+      --surface: #10141a;
+      --surface-low: #161b22;
+      --surface-container: #1c2026;
+      --surface-high: #272c33;
+      --surface-highest: #31353c;
+      --surface-glass: rgba(16, 20, 26, 0.78);
+      --text-strong: #f5ead1;
+      --text-body: #d0c5af;
+      --text-muted: #9e947f;
+      --outline: rgba(242, 202, 80, 0.18);
+      --outline-strong: rgba(242, 202, 80, 0.48);
+      --primary: #f2ca50;
+      --primary-container: #d4af37;
+      --primary-wash: rgba(242, 202, 80, 0.1);
+      --accent-amber: #f59e0b;
+      --accent-orange: #ea580c;
+      --accent-yellow: #fde68a;
+      --grid-gap: clamp(20px, 3vw, 40px);
+      --section-space: clamp(72px, 10vw, 140px);
+      --radius: 2px;
+      --max-width: 1320px;
+      --cursor-x: 0;
+      --cursor-y: 0;
+      --scroll-depth: 0;
+      --shimmer-y: 50%;
+      --hero-glow: 0.22;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text-body);
+      font-family: "Public Sans", Arial, sans-serif;
+      background-color: #020303;
+      background:
+        linear-gradient(180deg, rgba(7, 10, 16, 0.82) 0%, rgba(10, 14, 20, 0.9) 24%, rgba(13, 17, 24, 0.94) 100%),
+        repeating-linear-gradient(45deg, #050607 0, #050607 3px, #000 3px, #000 6px),
+        repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.86) 0, rgba(0, 0, 0, 0.86) 3px, rgba(18, 20, 21, 0.16) 3px, rgba(18, 20, 21, 0.16) 6px);
+      min-height: 100vh;
+      overflow-x: hidden;
+      perspective: 1600px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.02)),
+        radial-gradient(circle at calc(50% + (var(--cursor-x) * 12%)) calc(20% + (var(--cursor-y) * 10%)), rgba(255, 244, 211, 0.05), transparent 22%),
+        linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.008) 35%, rgba(245, 158, 11, 0.07) 50%, rgba(255, 255, 255, 0.018) 60%, transparent 100%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.022), rgba(255, 255, 255, 0.005) 18%, rgba(0, 0, 0, 0.08) 55%, rgba(255, 255, 255, 0.012) 100%);
+      background-size: auto, auto, 220% 320%, auto;
+      background-position: 0 0, 0 0, 50% var(--shimmer-y), 0 0;
+      mix-blend-mode: color-dodge;
+      opacity: 0.8;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.025), transparent 28%),
+        linear-gradient(180deg, rgba(6, 8, 12, 0.28), rgba(6, 8, 12, 0.06) 22%, rgba(6, 8, 12, 0.12) 56%, rgba(6, 8, 12, 0.24) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      padding: 18px 0;
+    }
+
+    .nav {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 18px;
+      background:
+        linear-gradient(135deg, rgba(245, 158, 11, 0.12), transparent 34%, rgba(253, 230, 138, 0.035) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012)),
+        rgba(10, 14, 20, 0.58);
+      backdrop-filter: blur(18px) saturate(1.15);
+      border: 1px solid rgba(255, 255, 255, 0.025);
+      border-radius: var(--radius);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 18px 44px rgba(0, 0, 0, 0.16);
+    }
+
+    .mark {
+      display: grid;
+      gap: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      color: var(--text-strong);
+    }
+
+    .mark strong {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: transparent;
+      background: linear-gradient(135deg, var(--text-strong), var(--accent-yellow) 52%, var(--accent-amber));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-amber);
+    }
+
+    .nav-cta {
+      padding: 12px 16px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #111;
+      background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-amber) 48%, var(--accent-orange) 100%);
+      border: none;
+      border-top: 1px solid rgba(255, 243, 197, 0.3);
+      border-radius: var(--radius);
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.16);
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 64px;
+    }
+
+    section {
+      margin-top: var(--section-space);
+    }
+
+    .hero {
+      position: relative;
+      margin-top: 0;
+      min-height: clamp(720px, 92vh, 980px);
+      overflow: clip;
+      background: transparent;
+      isolation: isolate;
+      transform-style: preserve-3d;
+    }
+
+    .hero-backdrop {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-backdrop::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, #070a10 0%, rgba(7, 10, 16, 0.99) 7%, rgba(8, 12, 18, 0.95) 16%, rgba(9, 13, 19, 0.72) 28%, rgba(10, 14, 20, calc(0.28 - (var(--hero-glow) * 0.1))) 40%, rgba(11, 15, 22, calc(0.14 - (var(--hero-glow) * 0.08))) 50%, rgba(10, 14, 20, 0.2) 58%, rgba(9, 13, 19, 0.66) 72%, rgba(7, 10, 16, 0.94) 86%, rgba(7, 10, 16, 0.99) 94%, #070a10 100%),
+        linear-gradient(180deg, rgba(7, 10, 16, 0.96) 0%, rgba(8, 11, 17, 0.7) 8%, rgba(9, 13, 19, 0.22) 20%, rgba(10, 14, 20, 0.08) 38%, rgba(10, 14, 20, 0.11) 56%, rgba(9, 13, 19, 0.34) 72%, rgba(7, 10, 16, 0.78) 88%, #0a0e14 100%),
+        radial-gradient(circle at calc(58% + (var(--cursor-x) * 6%)) calc(32% + (var(--cursor-y) * 4%)), rgba(250, 222, 143, calc(var(--hero-glow) * 0.24)), transparent 18%),
+        radial-gradient(circle at 56% 58%, rgba(255, 246, 216, calc(var(--hero-glow) * 0.08)), transparent 24%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(242, 202, 80, 0.045) 16%, rgba(12, 16, 22, 0.12) 42%, rgba(7, 10, 16, 0.66) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-backdrop video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 62% center;
+      filter: saturate(0.78) contrast(1.02) brightness(0.52);
+      transform: scale(calc(1.02 + (var(--scroll-depth) * 0.018))) translate3d(calc(var(--cursor-x) * 12px), calc(var(--cursor-y) * 10px), -80px);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      min-height: inherit;
+    }
+
+    .hero-shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      min-height: inherit;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: end;
+      padding: clamp(48px, 6vw, 84px) 0 clamp(52px, 7vw, 88px);
+      perspective: 1400px;
+      transform-style: preserve-3d;
+    }
+
+    .hero-copy-block {
+      max-width: 46rem;
+      align-self: end;
+      transform:
+        translate3d(calc(var(--cursor-x) * -10px), calc(var(--scroll-depth) * -22px), 46px)
+        rotateY(calc(var(--cursor-x) * -2.2deg))
+        rotateX(calc(var(--cursor-y) * 1.2deg));
+      transition: transform 180ms ease-out;
+    }
+
+    .hero-panel-stack {
+      justify-self: end;
+      width: min(100%, 360px);
+      align-self: center;
+      transform:
+        translate3d(calc(var(--cursor-x) * 14px), calc(var(--scroll-depth) * -34px), 84px)
+        rotateY(calc(var(--cursor-x) * 3deg))
+        rotateX(calc(var(--cursor-y) * -2deg));
+      transition: transform 180ms ease-out;
+    }
+
+    .eyebrow,
+    .kicker,
+    .section-label,
+    .meta {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+
+    .hero h1,
+    .section-headline,
+    .card-title,
+    .proof-block h3,
+    .form-panel h2 {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-strong);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.92;
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.7rem, 9vw, 7.4rem);
+      max-width: 11ch;
+      text-transform: none;
+    }
+
+    .typewriter-text {
+      display: block;
+      width: 100%;
+      min-height: 2.08em;
+      font-size: 0.9em;
+      line-height: 0.94;
+      color: transparent;
+      background: linear-gradient(90deg, #f6a11a, var(--accent-amber), #f4b43d, var(--accent-amber), #f07a18);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: amber-gradient 5s ease-in-out infinite;
+    }
+
+    .typewriter-text::after {
+      content: "|";
+      display: inline-block;
+      margin-left: 0.04em;
+      color: var(--accent-amber);
+      -webkit-text-fill-color: var(--accent-amber);
+      animation: cursor-blink 1s step-end infinite;
+    }
+
+    @keyframes amber-gradient {
+      0%, 100% {
+        background-position: left center;
+      }
+
+      50% {
+        background-position: right center;
+      }
+    }
+
+    @keyframes cursor-blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero-copy {
+      max-width: 36rem;
+      margin-top: 28px;
+      font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+      line-height: 1.8;
+      color: var(--text-body);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: var(--radius);
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: 180ms ease;
+    }
+
+    .btn-primary {
+      color: #13110a;
+      background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-amber) 52%, var(--accent-orange) 100%);
+      border-top: 1px solid rgba(255, 243, 197, 0.35);
+    }
+
+    .btn-secondary {
+      color: var(--text-strong);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--outline);
+      backdrop-filter: blur(14px);
+    }
+
+    .btn:hover,
+    .nav-cta:hover {
+      transform: translateY(-1px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .typewriter-text,
+      .typewriter-text::after {
+        animation: none;
+      }
+    }
+
+    .hero-panel {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-strong);
+    }
+
+    .hero-panel {
+      padding: 22px 24px 24px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.018) 30%, rgba(255, 255, 255, 0.008)),
+        rgba(9, 13, 19, 0.44);
+      backdrop-filter: blur(18px) saturate(1.15);
+      border: 1px solid rgba(255, 245, 214, 0.03);
+      border-radius: var(--radius);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 243, 197, 0.045),
+        0 28px 64px rgba(10, 14, 20, 0.08);
+      transform-style: preserve-3d;
+    }
+
+    .hero-panel-title {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      max-width: 14ch;
+    }
+
+    .hero-panel-copy {
+      margin: 0;
+      max-width: 28ch;
+      line-height: 1.75;
+    }
+
+    .hero-proof-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .hero-proof-item {
+      display: grid;
+      gap: 4px;
+    }
+
+    .hero-proof-item strong {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .hero-proof-item span {
+      line-height: 1.65;
+    }
+
+    .hero-summary {
+      margin-top: 0;
+      padding-top: 0;
+      background: transparent;
+    }
+
+    .service-card,
+    .proof-block,
+    .form-panel,
+    .quote-block {
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+    }
+
+    .meta {
+      color: var(--text-muted);
+    }
+
+    .kicker {
+      color: var(--text-muted);
+    }
+
+    .stats-strip {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(242, 202, 80, 0.04);
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .stats-strip article {
+      padding: 28px 22px;
+      background: rgba(28, 32, 38, 0.88);
+    }
+
+    .stats-strip strong {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-strong);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .section-headline {
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      max-width: 11ch;
+    }
+
+    .section-copy {
+      max-width: 42rem;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 26px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.008)),
+        rgba(14, 18, 24, 0.68);
+      min-height: 290px;
+      display: grid;
+      align-content: space-between;
+      backdrop-filter: blur(16px) saturate(1.08);
+      transform-style: preserve-3d;
+      transition: border-color 180ms ease, transform 180ms ease, backdrop-filter 180ms ease, box-shadow 180ms ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(242, 202, 80, 0.18);
+      transform: translate3d(0, -6px, 22px) rotateX(2deg) rotateY(-1deg);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+    }
+
+    .service-index,
+    .quote-mark {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.88rem;
+      color: var(--primary);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 1.85rem;
+      margin: 20px 0 16px;
+    }
+
+    .card-copy {
+      line-height: 1.85;
+      color: var(--text-body);
+      max-width: 28ch;
+    }
+
+    .proof-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
+      gap: 24px;
+    }
+
+    .proof-block {
+      padding: 32px;
+      background: var(--surface-low);
+    }
+
+    .proof-block h3 {
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      margin-bottom: 24px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 26px;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .proof-item strong {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-strong);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .quote-block {
+      display: grid;
+      align-content: space-between;
+      padding: 32px;
+      background:
+        linear-gradient(180deg, rgba(242, 202, 80, 0.08), rgba(242, 202, 80, 0.01)),
+        rgba(16, 20, 26, 0.72);
+      backdrop-filter: blur(16px);
+    }
+
+    .quote-body {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.75;
+      color: var(--text-strong);
+      max-width: 22ch;
+      margin: 22px 0 0;
+    }
+
+    .quote-attribution {
+      margin-top: 30px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+    }
+
+    .contact-grid {
+      align-items: start;
+    }
+
+    .form-panel {
+      padding: clamp(28px, 3vw, 38px);
+      background:
+        linear-gradient(180deg, rgba(49, 53, 60, 0.68), rgba(39, 44, 51, 0.82)),
+        rgba(28, 32, 38, 0.84);
+      backdrop-filter: blur(16px);
+    }
+
+    .form-panel h2 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin-bottom: 14px;
+    }
+
+    .form-note {
+      max-width: 34rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 10px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 16px 0 14px;
+      color: var(--text-strong);
+      font: inherit;
+      background: rgba(39, 44, 51, 0.9);
+      border: none;
+      border-bottom: 1px solid rgba(208, 197, 175, 0.25);
+      border-radius: 0;
+      outline: none;
+      transition: 180ms ease;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-bottom-color: var(--primary);
+      background: rgba(242, 202, 80, 0.05);
+    }
+
+    .form-submit {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-submit .meta {
+      max-width: 29rem;
+      line-height: 1.7;
+    }
+
+    .contact-side {
+      display: grid;
+      gap: 22px;
+    }
+
+    .contact-card {
+      padding: 28px;
+      background: var(--surface-container);
+      border: 1px solid var(--outline);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 12px;
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-strong);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-card p {
+      margin: 0;
+      line-height: 1.85;
+    }
+
+    .site-footer {
+      margin-top: var(--section-space);
+      padding: 32px 0 54px;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(242, 202, 80, 0.1);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 11px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-shell,
+      .section-head,
+      .proof-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services,
+      .stats-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-panel-stack {
+        justify-self: start;
+        width: min(100%, 360px);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        position: static;
+      }
+
+      .nav {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        justify-self: start;
+        flex-wrap: wrap;
+        gap: 14px 18px;
+      }
+
+      .hero {
+        margin-top: 0;
+        min-height: 680px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.4rem);
+        max-width: 8.2ch;
+        line-height: 0.96;
+      }
+
+      .typewriter-text {
+        min-height: 2.88em;
+      }
+
+      .services,
+      .stats-strip,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-shell {
+        padding: 28px 0 42px;
+      }
+
+      .hero-backdrop video {
+        object-position: 72% center;
+      }
+
+      .hero-panel-stack {
+        width: min(100%, 360px);
+      }
+
+      .proof-item {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <nav class="nav">
+        <a class="mark" href="#top" aria-label="Go to top">
+          <strong>Industrial Prestige</strong>
+          <span>Executive logistics concept</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services">Capabilities</a>
+          <a href="#proof">Proof</a>
+          <a href="#contact">Request a plan</a>
+        </div>
+        <a class="nav-cta" href="#contact">Secure your move window</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-backdrop">
+        <video autoplay muted loop playsinline>
+          <source src="Scenic%20Truck%20Drive%20Video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="hero-overlay">
+        <div class="hero-shell">
+          <div class="hero-copy-block">
+            <div class="eyebrow">Premium relocation specialists</div>
+            <h1>
+              We are your
+              <span id="typewriter" class="typewriter-text" aria-live="polite">calm in the chaos.</span>
+            </h1>
+            <p class="hero-copy">
+              Based in Cromwell, Central Otago. For over 30 years, Central Lakes Removals has moved homes, businesses, and high-value belongings with engineered precision and quiet confidence.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Request a transport brief</a>
+              <a class="btn btn-secondary" href="#proof">See operational proof</a>
+            </div>
+          </div>
+
+          <div class="hero-panel-stack">
+            <aside class="hero-panel">
+              <div class="kicker">Operational proof</div>
+              <strong class="hero-panel-title">Controlled logistics under a dark glass skin.</strong>
+              <p class="hero-panel-copy">The hero stays cinematic while the proof block carries just enough operational weight to make the page feel field-ready.</p>
+              <div class="hero-proof-list">
+                <div class="hero-proof-item">
+                  <strong>30+ Years</strong>
+                  <span>Field-led planning for premium relocations and complex freight handling.</span>
+                </div>
+                <div class="hero-proof-item">
+                  <strong>2hr Priority Intake</strong>
+                  <span>Serious enquiries are framed quickly instead of disappearing into a generic contact inbox.</span>
+                </div>
+                <div class="hero-proof-item">
+                  <strong>NZ-Wide Discipline</strong>
+                  <span>Regional and inter-island movements staged with cleaner routing and tighter crew control.</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-summary">
+      <div class="shell">
+        <div class="stats-strip">
+          <article>
+            <strong>Machined</strong>
+            <span>No-line sectioning, tonal depth, and sharp 2px corners.</span>
+          </article>
+          <article>
+            <strong>Editorial</strong>
+            <span>Oversized uppercase typography with deliberate negative space.</span>
+          </article>
+          <article>
+            <strong>Glass</strong>
+            <span>Blurred navigation and elevated surfaces for clarity under pressure.</span>
+          </article>
+          <article>
+            <strong>Webhook-ready</strong>
+            <span>Lead form section designed to map cleanly into an n8n endpoint later.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Capability framing</div>
+            <h2 class="section-headline">Three service pillars with real weight</h2>
+          </div>
+          <p class="section-copy">
+            These cards are intentionally not soft “feature boxes.” They read like engineered operating lanes: fewer words, larger statements, and enough breathing room to feel custom-built rather than assembled from a template kit.
+          </p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <div>
+              <div class="service-index">01 / Executive relocations</div>
+              <h3 class="card-title">Critical moves with zero improvisation.</h3>
+              <p class="card-copy">
+                Residential and corporate transitions handled through tightly sequenced planning, premium packing standards, and cleaner stakeholder communication.
+              </p>
+            </div>
+            <div class="meta">Best for senior households, offices, and staged settlements</div>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-index">02 / Specialist freight</div>
+              <h3 class="card-title">Difficult access. Awkward loads. Controlled outcomes.</h3>
+              <p class="card-copy">
+                A lane for machinery, sensitive assets, and non-standard payloads where confidence depends on crew discipline and equipment choice.
+              </p>
+            </div>
+            <div class="meta">Best for oversized, fragile, or high-value handling</div>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-index">03 / Storage and staging</div>
+              <h3 class="card-title">Secure holding between one site and the next.</h3>
+              <p class="card-copy">
+                An operational buffer for projects that need controlled timing, inventory accuracy, and a cleaner bridge between outbound and inbound delivery windows.
+              </p>
+            </div>
+            <div class="meta">Best for phased projects, renovations, and settlement gaps</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Proof architecture</div>
+            <h2 class="section-headline">Trust should feel measured, not claimed</h2>
+          </div>
+          <p class="section-copy">
+            This block breaks the usual testimonial carousel pattern. One side is hard proof. The other is a single weighted client voice. It keeps the page authoritative and avoids turning a premium operator into a noisy review collage.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-block">
+            <h3>Operational signals</h3>
+            <div class="proof-list">
+              <div class="proof-item">
+                <strong>01</strong>
+                <div>
+                  <div class="meta">Response discipline</div>
+                  <p>High-priority enquiries routed into a dedicated intake path instead of a generic contact inbox.</p>
+                </div>
+              </div>
+              <div class="proof-item">
+                <strong>02</strong>
+                <div>
+                  <div class="meta">Crew precision</div>
+                  <p>Job planning framed around access, lift profile, inventory risk, and destination readiness before dispatch.</p>
+                </div>
+              </div>
+              <div class="proof-item">
+                <strong>03</strong>
+                <div>
+                  <div class="meta">Visible process</div>
+                  <p>Progressive updates and milestone language built into the future Astro build so the site sells control, not just labour.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="quote-block">
+            <div>
+              <div class="quote-mark">Client signal</div>
+              <p class="quote-body">
+                “The whole thing felt less like hiring movers and more like handing the project to a field operator who already knew where the risks were.”
+              </p>
+            </div>
+            <div class="quote-attribution">Placeholder testimonial / replace with verified proof later</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Lead capture direction</div>
+            <h2 class="section-headline">A serious enquiry form, not a limp contact box</h2>
+          </div>
+          <p class="section-copy">
+            This section is designed for the final Astro implementation to post into an n8n webhook. The fields are framed around operational intake, so the first submission already gives dispatch-level context instead of just name, email, and a vague message.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="form-panel" action="#" method="post">
+            <h2>Request a move brief</h2>
+            <p class="form-note">
+              Prototype only. In the Astro build this becomes a Tailwind-styled form wired to an n8n webhook with validation, success states, and internal routing by service type.
+            </p>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Jordan Mercer">
+              </div>
+              <div class="field">
+                <label for="company">Company or household</label>
+                <input id="company" name="company" type="text" placeholder="Mercer Advisory">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="jordan@example.com">
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+64 21 000 0000">
+              </div>
+              <div class="field">
+                <label for="service">Service lane</label>
+                <select id="service" name="service">
+                  <option>Executive relocation</option>
+                  <option>Specialist freight</option>
+                  <option>Storage and staging</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="window">Required timing</label>
+                <input id="window" name="window" type="text" placeholder="Late May / fixed settlement date">
+              </div>
+              <div class="field full">
+                <label for="scope">Project scope</label>
+                <textarea id="scope" name="scope" placeholder="Origin, destination, access constraints, volume, specialty items, and anything that could compromise timing."></textarea>
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button class="btn btn-primary" type="submit">Transmit project scope</button>
+              <div class="meta">Future handler: `POST` to n8n webhook, enrich lead, notify dispatch, and branch into service-specific follow-up.</div>
+            </div>
+          </form>
+
+          <div class="contact-side">
+            <div class="contact-card">
+              <strong>Why this form structure works</strong>
+              <p>It filters for serious enquiries, captures better operational detail up front, and makes the later webhook automation materially more useful from day one.</p>
+            </div>
+            <div class="contact-card">
+              <strong>Astro build translation</strong>
+              <p>Hero, proof architecture, and service cards can map cleanly into Astro sections with Tailwind tokens for surfaces, typography, gold states, and blur utilities.</p>
+            </div>
+            <div class="contact-card">
+              <strong>Refinement targets</strong>
+              <p>Brand naming, final service language, imagery direction, trust proofs, and whether the tone should lean more “premium removals” or more “industrial project logistics.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <span>Homepage concept artifact</span>
+      <span>Built as raw HTML for Chrome review</span>
+      <span>Next phase: Astro + Tailwind + n8n webhook</span>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const hero = document.querySelector(".hero");
+      const typewriter = document.querySelector("#typewriter");
+
+      if (!hero) return;
+
+      let raf = 0;
+      let targetX = 0;
+      let targetY = 0;
+      const slogans = ["calm in the chaos.", "antidote to stress.", "steady hand."];
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+      const updateScroll = () => {
+        const rect = hero.getBoundingClientRect();
+        const viewport = window.innerHeight || 1;
+        const progress = clamp((viewport - rect.top) / (viewport + rect.height), 0, 1);
+        const depth = progress - 0.28;
+        const glow = clamp(0.18 + progress * 0.22, 0.16, 0.42);
+        const shimmerY = 42 + progress * 26;
+        root.style.setProperty("--scroll-depth", depth.toFixed(3));
+        root.style.setProperty("--hero-glow", glow.toFixed(3));
+        root.style.setProperty("--shimmer-y", `${shimmerY.toFixed(1)}%`);
+      };
+
+      const runTypewriter = () => {
+        if (!typewriter) return;
+
+        typewriter.textContent = slogans[0];
+
+        if (reduceMotion) return;
+
+        let sloganIndex = 0;
+        let letterIndex = 0;
+        let isDeleting = false;
+
+        const typeDelay = (current, nextIndex) => {
+          const character = current.charAt(Math.max(0, nextIndex - 1));
+          const nextCharacter = current.charAt(nextIndex);
+          const base = 76 + Math.random() * 82;
+
+          if (character === " ") return base + 45;
+          if (/[.,!?]/.test(character)) return base + 180;
+          if (nextCharacter === " ") return base + 30;
+          return base;
+        };
+
+        const deleteDelay = () => 34 + Math.random() * 34;
+
+        const type = () => {
+          const current = slogans[sloganIndex];
+          letterIndex += isDeleting ? -1 : 1;
+          typewriter.textContent = current.slice(0, letterIndex);
+
+          let delay = isDeleting ? deleteDelay() : typeDelay(current, letterIndex);
+
+          if (!isDeleting && letterIndex === current.length) {
+            delay = 2200;
+            isDeleting = true;
+          } else if (isDeleting && letterIndex === 0) {
+            isDeleting = false;
+            sloganIndex = (sloganIndex + 1) % slogans.length;
+            delay = 360;
+          }
+
+          window.setTimeout(type, delay);
+        };
+
+        typewriter.textContent = "";
+        window.setTimeout(type, 400);
+      };
+
+      const renderPointer = () => {
+        root.style.setProperty("--cursor-x", targetX.toFixed(3));
+        root.style.setProperty("--cursor-y", targetY.toFixed(3));
+        raf = 0;
+      };
+
+      const queuePointer = () => {
+        if (!raf) raf = requestAnimationFrame(renderPointer);
+      };
+
+      hero.addEventListener("pointermove", (event) => {
+        const rect = hero.getBoundingClientRect();
+        targetX = clamp(((event.clientX - rect.left) / rect.width) * 2 - 1, -1, 1);
+        targetY = clamp(((event.clientY - rect.top) / rect.height) * 2 - 1, -1, 1);
+        queuePointer();
+      });
+
+      hero.addEventListener("pointerleave", () => {
+        targetX = 0;
+        targetY = 0;
+        queuePointer();
+      });
+
+      window.addEventListener("scroll", updateScroll, { passive: true });
+      window.addEventListener("resize", updateScroll);
+      updateScroll();
+      renderPointer();
+      runTypewriter();
+    })();
+  </script>
+</body>
+</html>

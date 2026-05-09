@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Lakes Removals - Premium Relocations</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#000000',      // Pure Black
+                            surface: '#0A0A0A', // Very Dark Gray
+                            text: '#F8FAFC',    // Off-white
+                            muted: '#94A3B8',   // Slate gray
+                            accent: '#F59E0B',  // Energetic Amber
+                            glow: 'rgba(245, 158, 11, 0.5)'
+                        }
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 3s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #000000;
+            color: #F8FAFC;
+            overflow-x: hidden;
+            /* Authentic, tight woven Carbon Fiber pattern - Darkened */
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    #050505 0%,
+                    #050505 3px,
+                    #000000 3px,
+                    #000000 6px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    rgba(0,0,0,0.8) 0%,
+                    rgba(0,0,0,0.8) 3px,
+                    transparent 3px,
+                    transparent 6px
+                );
+        }
+
+        /* Dynamic Scroll Shimmer (Gloss Resin Reflection) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(135deg, 
+                transparent 0%, 
+                rgba(255,255,255,0.01) 35%, 
+                rgba(245, 158, 11, 0.08) 50%, 
+                rgba(255,255,255,0.02) 60%, 
+                transparent 100%);
+            background-size: 200% 300%;
+            background-position: 50% calc(50% + (var(--scroll, 0) * 0.15%));
+            pointer-events: none;
+            z-index: -1;
+            mix-blend-mode: color-dodge;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
+
+        /* Standard Glass Layer */
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: none;
+            box-shadow: 
+                inset 1px 1px 2px rgba(255, 255, 255, 0.05), 
+                inset -1px -1px 4px rgba(0, 0, 0, 0.8),       
+                0 15px 35px rgba(0, 0, 0, 0.8);               
+        }
+
+        /* Recessed Layer */
+        .glass-panel-recessed {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(8px);
+            border: none;
+            box-shadow: 
+                inset 3px 3px 10px rgba(0, 0, 0, 0.9),       
+                inset -1px -1px 3px rgba(255, 255, 255, 0.02);
+        }
+
+        /* Floating Interactive Cards - No shadow resting, bold shadow on hover */
+        .glass-panel-floating {
+            background: rgba(15, 15, 15, 0.6);
+            backdrop-filter: blur(12px);
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-panel-floating:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                inset 1px 1px 4px rgba(255, 255, 255, 0.1), 
+                0 35px 60px -15px rgba(0, 0, 0, 1);
+        }
+
+        /* Special Tagline Card (Amber) - No shadow resting, bold shadow on hover */
+        .glass-panel-amber {
+            background: rgba(245, 158, 11, 0.15);
+            backdrop-filter: blur(15px);
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-panel-amber:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                inset 1px 1px 6px rgba(245, 158, 11, 0.6),
+                0 35px 60px -15px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Scroll Reveal Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3D Tabs */
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 0 transparent;
+        }
+        .tab-btn.active { 
+            color: #F59E0B;
+            background: rgba(15, 15, 15, 0.8);
+            border-radius: 0.75rem;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8), inset -1px -1px 2px rgba(255,255,255,0.02);
+        }
+
+        /* Typewriter cursor */
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #F59E0B;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-brand-accent selection:text-brand-bg">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 glass-panel">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-accent to-orange-600 text-white flex items-center justify-center font-extrabold text-2xl shadow-[inset_1px_1px_2px_rgba(255,255,255,0.4),0_5px_15px_rgba(245,158,11,0.5)]">
+                    C
+                </div>
+                <h1 class="text-xl font-bold tracking-wider text-white uppercase">Central Lakes <span class="text-brand-accent drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]">Removals</span></h1>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm font-bold tracking-wide text-brand-muted items-center">
+                <a href="#services" class="hover:text-brand-accent drop-shadow-md transition-colors duration-300">SERVICES</a>
+                <a href="#advantages" class="hover:text-brand-accent drop-shadow-md transition-colors duration-300">WHY US</a>
+                <a href="#contact" class="hover:text-brand-accent drop-shadow-md transition-colors duration-300">CONTACT</a>
+                <a href="#contact" class="px-5 py-2 rounded-lg bg-brand-accent text-brand-bg hover:bg-orange-400 transition-colors shadow-[0_0_15px_rgba(245,158,11,0.3)]">GET A QUOTE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-24 pb-20">
+        <section class="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-4 reveal active mx-4 md:mx-8 rounded-[2rem] overflow-hidden border border-white/10 mb-20 bg-gradient-to-br from-[#0A0A0A] to-black shadow-[inset_0_0_80px_rgba(0,0,0,0.9)]">
+            
+            <div class="relative z-20 flex flex-col items-center">
+                <!-- 3D Pill -->
+                <div class="inline-block px-5 py-2 rounded-full bg-brand-accent/20 text-brand-accent text-sm font-bold tracking-widest uppercase mb-8 shadow-[inset_1px_1px_2px_rgba(245,158,11,0.3),0_10px_20px_rgba(0,0,0,0.8)] animate-float backdrop-blur-md">
+                    Premium Relocation Specialists
+                </div>
+                <h2 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 max-w-4xl drop-shadow-[0_10px_10px_rgba(0,0,0,0.9)]">
+                    We are your <br />
+                    <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-orange-400 to-yellow-300 animate-gradient-x cursor"></span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl leading-relaxed mt-4 font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-black/20 p-4 rounded-xl backdrop-blur-sm">
+                    Based in Cromwell, Central Otago. For over 30 years, we haven't just moved boxes—we've transitioned lives. Turn moving day into a seamless, 5-star experience.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-3 rounded-xl bg-gradient-to-r from-brand-accent to-orange-500 text-brand-bg font-bold shadow-[0_10px_20px_rgba(245,158,11,0.4)] hover:scale-105 transition-transform">Book Your Move</a>
+                    <a href="#services" class="px-8 py-3 rounded-xl glass-panel-floating text-white font-bold hover:text-brand-accent transition-colors backdrop-blur-md">Our Services</a>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section id="services" class="max-w-7xl mx-auto px-6 py-10 scroll-mt-20 reveal">
+            <div class="text-center mb-16 relative z-10">
+                <h2 class="text-4xl font-extrabold text-white mb-4 drop-shadow-md">Tailored Services</h2>
+                <p class="text-brand-muted text-lg font-light max-w-2xl mx-auto drop-shadow-sm">Comprehensive logistics handled with uncompromising care. We expose all our capabilities upfront so you know you're in the right hands.</p>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <!-- Local -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col h-full border border-white/5 group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform origin-left">&#127960;</div>
+                    <h3 class="text-2xl text-brand-accent font-bold drop-shadow-sm mb-4">Local Moves</h3>
+                    <p class="text-gray-300 font-light leading-relaxed flex-grow">
+                        <strong class="text-white font-medium">Cromwell & Central Otago.</strong> Our local teams know the region inside and out. Whether navigating alpine roads or across the street, we provide secure, familiar service right in our backyard.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-black/60 shadow-inner text-xs font-bold text-brand-muted uppercase tracking-wider border border-white/5">Same Day Options</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/60 shadow-inner text-xs font-bold text-brand-muted uppercase tracking-wider border border-white/5">Full Packing</span>
+                    </div>
+                </div>
+
+                <!-- Nationwide -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col h-full border border-white/5 group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform origin-left">&#128666;</div>
+                    <h3 class="text-2xl text-brand-accent font-bold drop-shadow-sm mb-4">Nationwide</h3>
+                    <p class="text-gray-300 font-light leading-relaxed flex-grow">
+                        <strong class="text-white font-medium">Inter-Island Logistics.</strong> Moving across the South Island or bridging the Cook Strait? We handle the heavy lifting and long-haul transport so you arrive stress-free.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-black/60 shadow-inner text-xs font-bold text-brand-muted uppercase tracking-wider border border-white/5">Inter-Island</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/60 shadow-inner text-xs font-bold text-brand-muted uppercase tracking-wider border border-white/5">Secure Transit</span>
+                    </div>
+                </div>
+
+                <!-- Commercial -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col h-full border border-white/5 group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform origin-left">&#127970;</div>
+                    <h3 class="text-2xl text-brand-accent font-bold drop-shadow-sm mb-4">Commercial</h3>
+                    <p class="text-gray-300 font-light leading-relaxed flex-grow">
+                        <strong class="text-white font-medium">Minimize Downtime.</strong> We assign dedicated project managers to handle IT equipment, office furniture, and sensitive documents with absolute precision to keep your business running.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-black/60 shadow-inner text-xs font-bold text-brand-muted uppercase tracking-wider border border-white/5">IT Relocation</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/60 shadow-inner text-xs font-bold text-brand-muted uppercase tracking-wider border border-white/5">After Hours</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section id="advantages" class="max-w-7xl mx-auto px-6 py-20 scroll-mt-20 reveal">
+            <div class="text-center mb-16 relative z-10">
+                <h2 class="text-4xl font-extrabold text-white mb-4 drop-shadow-md">The Central Lakes Difference</h2>
+                <p class="text-brand-muted text-lg font-light max-w-2xl mx-auto drop-shadow-sm">Why over 12,000 customers have trusted us with their most valuable belongings.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <!-- Trust -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col sm:flex-row gap-6 items-start border border-white/5 hover:border-brand-accent/30 transition-colors">
+                    <div class="text-5xl drop-shadow-md opacity-80">&#9875;</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-accent mb-2">Proven Trust</h3>
+                        <p class="text-gray-300 font-light leading-relaxed"><strong class="text-white font-medium">Experience:</strong> Over 30 years handling local and nationwide moves with a 99% satisfaction rate.</p>
+                    </div>
+                </div>
+
+                <!-- Care -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col sm:flex-row gap-6 items-start border border-white/5 hover:border-brand-accent/30 transition-colors">
+                    <div class="text-5xl drop-shadow-md opacity-80">&#128142;</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-accent mb-2">Uncompromising Care</h3>
+                        <p class="text-gray-300 font-light leading-relaxed"><strong class="text-white font-medium">Protection:</strong> We treat every item—from priceless antiques to everyday furniture—with meticulous, insured protection.</p>
+                    </div>
+                </div>
+
+                <!-- Eco -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col sm:flex-row gap-6 items-start border border-white/5 hover:border-brand-accent/30 transition-colors">
+                    <div class="text-5xl drop-shadow-md opacity-80">&#127811;</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-accent mb-2">Eco-Conscious</h3>
+                        <p class="text-gray-300 font-light leading-relaxed"><strong class="text-white font-medium">Sustainability:</strong> We actively reduce waste by utilizing heavy-duty reusable crates and eco-friendly packing materials.</p>
+                    </div>
+                </div>
+
+                <!-- Attitude -->
+                <div class="glass-panel-floating rounded-3xl p-8 flex flex-col sm:flex-row gap-6 items-start border border-white/5 hover:border-brand-accent/30 transition-colors">
+                    <div class="text-5xl drop-shadow-md opacity-80">&#128526;</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-accent mb-2">Great Attitude</h3>
+                        <p class="text-gray-300 font-light leading-relaxed"><strong class="text-white font-medium">Service:</strong> Moving is stressful. Our uniformed crews bring a positive, can-do attitude that instantly lifts the weight off your shoulders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-20 reveal">
+            <div class="mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-6">
+                <div>
+                    <h2 class="text-4xl font-extrabold text-white mb-2 drop-shadow-md">Get Moving</h2>
+                    <p class="text-brand-muted font-light text-xl">Reach out today for a free, no-obligation estimate.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <span class="text-brand-accent font-bold text-3xl tracking-wider">12,000+</span>
+                    <span class="block text-brand-muted text-sm uppercase tracking-widest">Successful Moves</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Contact Card 1: Phone -->
+                <div class="group glass-panel-floating p-8 rounded-2xl relative overflow-hidden hover:border-brand-accent border border-transparent transition-colors">
+                    <div class="absolute -right-4 -bottom-4 text-8xl text-white opacity-5 group-hover:text-brand-accent group-hover:opacity-10 transition-all duration-300">&#128222;</div>
+                    <p class="text-xs font-bold uppercase text-brand-accent tracking-widest mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent shadow-[0_0_8px_rgba(245,158,11,1)]"></span> Call Us
+                    </p>
+                    <p class="text-xl font-semibold text-white drop-shadow-md mb-2">0800 REMOVE</p>
+                    <p class="text-sm text-brand-muted">Mon-Fri: 8am - 6pm</p>
+                </div>
+                
+                <!-- Contact Card 2: Email -->
+                <div class="group glass-panel-floating p-8 rounded-2xl relative overflow-hidden hover:border-brand-accent border border-transparent transition-colors">
+                    <div class="absolute -right-4 -bottom-4 text-8xl text-white opacity-5 group-hover:text-brand-accent group-hover:opacity-10 transition-all duration-300">&#9993;</div>
+                    <p class="text-xs font-bold uppercase text-brand-accent tracking-widest mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent shadow-[0_0_8px_rgba(245,158,11,1)]"></span> Email
+                    </p>
+                    <p class="text-lg font-semibold text-white drop-shadow-md mb-2 truncate">info@centrallakes.co.nz</p>
+                    <p class="text-sm text-brand-muted">Fast response guaranteed</p>
+                </div>
+
+                <!-- Contact Card 3: Location -->
+                <div class="group glass-panel-floating p-8 rounded-2xl relative overflow-hidden hover:border-brand-accent border border-transparent transition-colors">
+                    <div class="absolute -right-4 -bottom-4 text-8xl text-white opacity-5 group-hover:text-brand-accent group-hover:opacity-10 transition-all duration-300">&#128205;</div>
+                    <p class="text-xs font-bold uppercase text-brand-accent tracking-widest mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent shadow-[0_0_8px_rgba(245,158,11,1)]"></span> HQ
+                    </p>
+                    <p class="text-lg font-semibold text-white drop-shadow-md mb-2">Cromwell, Otago</p>
+                    <p class="text-sm text-brand-muted">Proudly local.</p>
+                </div>
+
+                <!-- Contact Card 4 (Highlighted CTA) -->
+                <div class="group glass-panel-amber p-8 rounded-2xl relative overflow-hidden cursor-pointer" onclick="alert('In a live site, this would open a quote form modal!')">
+                    <div class="absolute -right-4 -bottom-4 text-8xl text-brand-accent opacity-10 drop-shadow-md">&#128172;</div>
+                    <p class="text-xs font-bold uppercase text-brand-accent tracking-widest mb-3 flex items-center gap-2 drop-shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent shadow-[0_0_8px_rgba(245,158,11,1)] animate-pulse"></span> Action
+                    </p>
+                    <p class="text-2xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mt-4">Request a Quote &rarr;</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black shadow-[inset_0_15px_20px_-15px_rgba(0,0,0,1)] py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-accent to-orange-600 text-white flex items-center justify-center font-extrabold text-lg">C</div>
+                <span class="text-white font-bold tracking-wider uppercase text-sm">Central Lakes Removals</span>
+            </div>
+            <p class="text-brand-muted font-light text-sm tracking-wide drop-shadow-sm">
+                &copy; 2026 Central Lakes Removals. <span class="text-brand-accent drop-shadow-md">Moving lives, not just furniture.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Typewriter Effect
+            const texts = ["calm in the chaos.", "antidote to stress.", "steady hand."];
+            let count = 0;
+            let index = 0;
+            let currentText = "";
+            let letter = "";
+            let isDeleting = false;
+            
+            function type() {
+                if (count === texts.length) { count = 0; }
+                currentText = texts[count];
+                
+                if (isDeleting) {
+                    letter = currentText.slice(0, --index);
+                } else {
+                    letter = currentText.slice(0, ++index);
+                }
+                
+                document.getElementById('typewriter').textContent = letter;
+                
+                let typeSpeed = 100;
+                if (isDeleting) { typeSpeed /= 2; }
+                
+                if (!isDeleting && letter.length === currentText.length) {
+                    typeSpeed = 2000; // Pause at end
+                    isDeleting = true;
+                } else if (isDeleting && letter.length === 0) {
+                    isDeleting = false;
+                    count++;
+                    typeSpeed = 500; // Pause before new word
+                }
+                setTimeout(type, typeSpeed);
+            }
+            setTimeout(type, 1000);
+
+            // 2. Scroll Reveal Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+            
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            // 5. Scroll-linked Shimmer Effect
+            window.addEventListener('scroll', () => {
+                document.body.style.setProperty('--scroll', window.scrollY);
+            });
+        });
+    </script>
+</body>
+</html>
