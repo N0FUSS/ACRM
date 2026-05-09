@@ -1,0 +1,536 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Central Lakes Removals — Industrial Architect design tokens        */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  :root {
+    /* --- Shadcn compatibility layer (HSL, kept so Radix components work) --- */
+    /* Nearly-black backglass (deep slate #0b0f16). */
+    --background: 220 20% 5%;
+    --foreground: 44 53% 91%;
+
+    --card: 220 16% 9%;
+    --card-foreground: 44 53% 91%;
+
+    --popover: 220 16% 9%;
+    --popover-foreground: 44 53% 91%;
+
+    /* Rich metallic gold #D9A441 in HSL = 42, 68%, 55% */
+    --primary: 42 68% 55%;
+    --primary-foreground: 220 40% 5%;
+
+    --secondary: 222 13% 13%;
+    --secondary-foreground: 44 53% 91%;
+
+    --muted: 222 13% 11%;
+    --muted-foreground: 41 26% 72%;
+
+    --accent: 42 68% 55%;
+    --accent-foreground: 220 40% 5%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 13% 18%;
+    --input: 222 13% 13%;
+    --ring: 42 68% 55%;
+
+    --radius: 2px;
+    --radius-sm: 2px;
+    --radius-lg: 2px;
+    --radius-full: 9999px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+
+    --shadow-sm: 0 1px 2px 0 rgba(8, 11, 16, 0.45);
+    --shadow-md: 0 8px 24px -8px rgba(8, 11, 16, 0.55);
+    --shadow-lg: 0 32px 64px -16px rgba(8, 11, 16, 0.75);
+
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 350ms;
+
+    --chart-1: 42 68% 55%;
+    --chart-2: 42 60% 42%;
+    --chart-3: 41 26% 72%;
+    --chart-4: 222 13% 28%;
+    --chart-5: 220 20% 5%;
+
+    /* --- Industrial Architect brand tokens --- */
+    /* Deep nearly-black backglass surfaces. */
+    --surface-container-lowest: #070a10;
+    --surface: #0b0f16;
+    --surface-container-low: #101520;
+    --surface-container: #161b26;
+    --surface-container-high: #1f2530;
+    --surface-container-highest: #2a303c;
+    --outline-variant: #353b48;
+
+    /* ----- UNIVERSAL BRAND GOLD ----- */
+    /* Primary — rich metallic gold, warm / orange-leaning, sampled from middle of the amber→yellow arc. */
+    --primary-gold: #d9a441;          /* the universal brand gold */
+    --primary-container: #be8a2f;     /* deeper fill / button base */
+    --primary-fixed: #edbe5b;         /* lighter highlight / sheen */
+    --primary-deep: #9a6e20;          /* deepest bronze undertone */
+
+    /* Gradient stops — used for typewriter, headline accents, logo mark */
+    --grad-stop-1: #f59e0b;           /* amber */
+    --grad-stop-2: #fb923c;           /* orange-400 */
+    --grad-stop-3: #d9a441;           /* our metallic gold core */
+    --grad-stop-4: #fde047;           /* yellow-300 */
+
+    --on-surface: #f2ecdb;
+    --on-surface-variant: #c9bfa8;
+
+    /* Ghost borders updated to new gold hue */
+    --ghost-border: rgba(217, 164, 65, 0.22);
+    --ghost-border-strong: rgba(217, 164, 65, 0.52);
+    --ghost-border-faint: rgba(217, 164, 65, 0.08);
+
+    --glass-bg: rgba(11, 15, 22, 0.72);
+    --glass-bg-strong: rgba(11, 15, 22, 0.86);
+    --glass-bg-soft: rgba(22, 27, 38, 0.55);
+    --glass-blur: 16px;
+
+    --grad-hero: linear-gradient(
+      135deg,
+      #0b0f16 0%,
+      #161b26 55%,
+      rgba(217, 164, 65, 0.1) 100%
+    );
+    /* Universal gold gradient — amber → metallic gold → yellow (from concept HTML) */
+    --grad-gold: linear-gradient(
+      90deg,
+      var(--grad-stop-1) 0%,
+      var(--grad-stop-2) 35%,
+      var(--grad-stop-3) 60%,
+      var(--grad-stop-4) 100%
+    );
+    --grad-gold-bevel: linear-gradient(
+      180deg,
+      rgba(255, 238, 180, 0.65) 0%,
+      rgba(237, 190, 91, 0) 45%
+    );
+
+    /* Scroll progress variable — updated live by <BackgroundFX />. */
+    --scroll-y: 0;
+  }
+
+  .dark {
+    /* Same tokens — the whole site uses the industrial dark palette */
+    --background: 220 20% 5%;
+    --foreground: 44 53% 91%;
+    --card: 220 16% 9%;
+    --card-foreground: 44 53% 91%;
+    --popover: 220 16% 9%;
+    --popover-foreground: 44 53% 91%;
+    --primary: 42 68% 55%;
+    --primary-foreground: 220 40% 5%;
+    --secondary: 222 13% 13%;
+    --secondary-foreground: 44 53% 91%;
+    --muted: 222 13% 11%;
+    --muted-foreground: 41 26% 72%;
+    --accent: 42 68% 55%;
+    --accent-foreground: 220 40% 5%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 13% 18%;
+    --input: 222 13% 13%;
+    --ring: 42 68% 55%;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--surface-container-lowest);
+    color: var(--on-surface);
+  }
+
+  body {
+    font-family: var(--font-sans), 'Open Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'ss01', 'cv11';
+    overflow-x: hidden;
+    position: relative;
+
+    /* FINE WOVEN CARBON-FIBER TEXTURE — the nearly-black backglass base.
+       Fixed to the viewport so it feels like a material, not a pattern that scrolls. */
+    background-color: var(--surface-container-lowest);
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        #05080c 0%,
+        #05080c 3px,
+        var(--surface-container-lowest) 3px,
+        var(--surface-container-lowest) 6px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.42) 3px,
+        transparent 3px,
+        transparent 6px
+      );
+    background-attachment: fixed, fixed;
+  }
+
+  /* SCROLL-LINKED GLOSS SHIMMER — sheet of light that drifts as the page moves.
+     Updated live by <BackgroundFX />; uses color-dodge so it ONLY reveals itself
+     over the darker surfaces (never over the video or bright panels). */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: color-dodge;
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.012) 35%,
+      rgba(217, 164, 65, 0.08) 50%,
+      rgba(255, 255, 255, 0.02) 60%,
+      transparent 100%
+    );
+    background-size: 200% 300%;
+    background-position: 50% calc(50% + (var(--scroll-y, 0) * 0.15%));
+    transition: background-position 80ms linear;
+  }
+
+  ::selection {
+    background: rgba(217, 164, 65, 0.35);
+    color: var(--on-surface);
+  }
+
+  /* Suppress hydration-error attribute noise if any library emits it */
+  [data-hydration-error] {
+    display: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utility classes — glass, ghost borders, bevel, grain               */
+/* ------------------------------------------------------------------ */
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), 'Montserrat', system-ui, sans-serif;
+  }
+
+  .glass-surface {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  }
+
+  .glass-surface-soft {
+    background: var(--glass-bg-soft);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    backdrop-filter: blur(12px) saturate(130%);
+  }
+
+  .glass-surface-strong {
+    background: var(--glass-bg-strong);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+  }
+
+  /* Ghost border = 1px gold edge at 20% opacity. Implemented via inset
+     ring so it never reads as a divider line. */
+  .ghost-border {
+    box-shadow: inset 0 0 0 1px var(--ghost-border);
+  }
+
+  .ghost-border-hover:hover {
+    box-shadow: inset 0 0 0 1px var(--ghost-border-strong);
+  }
+
+  .ghost-border-faint {
+    box-shadow: inset 0 0 0 1px var(--ghost-border-faint);
+  }
+
+  /* Machined bevel highlight on top edge only */
+  .bevel-top::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 238, 180, 0) 0%,
+      rgba(255, 238, 180, 0.55) 50%,
+      rgba(255, 238, 180, 0) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Inner glass reflection — the subtle sheen on glass cards */
+  .glass-reflection::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(242, 236, 219, 0.06) 0%,
+      rgba(242, 236, 219, 0) 40%,
+      rgba(242, 236, 219, 0) 60%,
+      rgba(217, 164, 65, 0.06) 100%
+    );
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Subtle film-grain texture for mechanical luxury */
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.92 0 0 0 0 0.85 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 180px 180px;
+  }
+
+  .tracked-label {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .tracked-display {
+    letter-spacing: -0.02em;
+  }
+
+  .text-on-surface-variant {
+    color: var(--on-surface-variant);
+  }
+
+  .text-on-surface {
+    color: var(--on-surface);
+  }
+
+  .text-gold {
+    color: var(--primary-gold);
+  }
+
+  .text-gold-deep {
+    color: var(--primary-container);
+  }
+
+  .bg-hero-gradient {
+    background: var(--grad-hero);
+  }
+
+  .bg-gold-gradient {
+    background: var(--grad-gold);
+  }
+
+  /* Gold gradient text — amber → metallic gold → yellow (from concept HTML). */
+  .text-gold-gradient {
+    background: var(--grad-gold);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Animated gradient text — the same amber→gold→yellow arc, shimmering. */
+  .text-gold-gradient-animated {
+    background: var(--grad-gold);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-x 4s ease-in-out infinite;
+  }
+
+  /* Pure gold gradient fill (non-text) */
+  .bg-gold-gradient-animated {
+    background: var(--grad-gold);
+    background-size: 200% 200%;
+    animation: gradient-x 4s ease-in-out infinite;
+  }
+
+  /* Radial focal glow for the bottom-right corner of the hero */
+  .bg-focal-glow {
+    background: radial-gradient(
+      ellipse at 85% 80%,
+      rgba(217, 164, 65, 0.18) 0%,
+      rgba(217, 164, 65, 0.06) 25%,
+      rgba(11, 15, 22, 0) 60%
+    );
+  }
+
+  /* Vignette to ensure headline legibility over the video */
+  .bg-video-vignette {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 10, 16, 0.45) 0%,
+        rgba(7, 10, 16, 0.25) 35%,
+        rgba(7, 10, 16, 0.55) 75%,
+        rgba(7, 10, 16, 0.88) 100%
+      ),
+      linear-gradient(
+        100deg,
+        rgba(7, 10, 16, 0.85) 0%,
+        rgba(7, 10, 16, 0.55) 35%,
+        rgba(7, 10, 16, 0.2) 70%,
+        rgba(217, 164, 65, 0.08) 100%
+      );
+  }
+
+  /* Carbon-fiber utility — for any element that wants the same tactile base. */
+  .carbon-fiber {
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.45) 3px,
+        transparent 3px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.03) 3px,
+        transparent 3px,
+        transparent 6px
+      );
+  }
+
+  /* Beveled primary button — no shadow, just a 1px top highlight */
+  .btn-bevel-top::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: rgba(255, 240, 190, 0.6);
+    pointer-events: none;
+  }
+
+  /* Dot separator used in the trust strip */
+  .dot-separator::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 9999px;
+    background: var(--primary-container);
+    opacity: 0.55;
+    margin: 0 0.9rem;
+    vertical-align: middle;
+  }
+
+  /* Animated entry utilities */
+  .will-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise-in 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes rise-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -6px, 0);
+    }
+  }
+
+  .float-drift {
+    animation: drift 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-gold {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(217, 164, 65, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(217, 164, 65, 0);
+    }
+  }
+
+  .pulse-gold {
+    animation: pulse-gold 2.4s ease-in-out infinite;
+  }
+
+  @keyframes scroll-cue {
+    0% {
+      transform: translateY(-4px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  }
+
+  .scroll-cue-dot {
+    animation: scroll-cue 1.8s ease-in-out infinite;
+  }
+
+  /* Typewriter — animated gradient sweep + blinking cursor */
+  @keyframes gradient-x {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .typewriter-cursor {
+    display: inline-block;
+    width: 0.08em;
+    margin-left: 0.04em;
+    background: linear-gradient(
+      180deg,
+      var(--grad-stop-1) 0%,
+      var(--primary-gold) 50%,
+      var(--grad-stop-4) 100%
+    );
+    animation: cursor-blink 1s step-end infinite;
+    vertical-align: -0.08em;
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="https://static.vecteezy.com/system/resources/thumbnails/013/703/764/small/luxury-gold-gradient-color-set-vector.jpg" viewBox="0 0 256 256">
+<defs>
+  <linearGradient id="clrGold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#f59e0b"/>
+    <stop offset="35%" stop-color="#fb923c"/>
+    <stop offset="60%" stop-color="#d9a441"/>
+    <stop offset="100%" stop-color="#fde047"/>
+  </linearGradient>
+</defs>
+<rect width="256" height="256" fill="#0b0f16" rx="2" ry="2"/>
+<rect x="12" y="12" width="232" height="232" fill="none" stroke="#d9a441" stroke-width="1" opacity="0.22"/>
+<text x="128" y="158" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="72" fill="url(#clrGold)" text-anchor="middle" letter-spacing="-1.44">CLR</text>
+</svg>
