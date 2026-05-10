@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { businessConfig } from "@/lib/business-config";
 import MobileNav from "./MobileNav";
 
 const navItems = [
@@ -39,7 +40,7 @@ export default function Header() {
 
           <div className="hidden items-center gap-4 lg:flex">
             <a
-              href="tel:+64211234567"
+              href={`tel:${businessConfig.phoneTel}`}
               className="btn-secondary text-sm px-4 py-2 min-h-0"
             >
               📞 Call Russell

@@ -1,3 +1,5 @@
+import { businessConfig } from "@/lib/business-config";
+
 export interface QuoteFormData {
   name: string;
   phone: string;
@@ -219,7 +221,7 @@ export function generateEmailHtml(data: QuoteFormData): string {
           <tr>
             <td style="background-color: #f5f5f0; padding: 24px 40px; border-radius: 0 0 8px 8px; text-align: center;">
               <p style="margin: 0; color: #888; font-size: 13px;">
-                Central Lakes Removals · Wanaka, New Zealand
+                Central Lakes Removals · ${businessConfig.baseLocation.locality}, New Zealand
               </p>
               <p style="margin: 8px 0 0; color: #aaa; font-size: 12px;">
                 Sent via website quote form
@@ -270,6 +272,6 @@ ${data.message ? `ADDITIONAL MESSAGE
 ${data.message}
 ` : ''}
 ---
-Sent via central-lakes-removals.co.nz quote form
+Sent via ${businessConfig.siteUrl.replace("https://", "")} quote form
 `.trim();
 }

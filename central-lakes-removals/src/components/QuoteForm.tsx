@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { businessConfig } from "@/lib/business-config";
 
 interface FormData {
   name: string;
@@ -95,7 +96,7 @@ export default function QuoteForm() {
           setSubmitError("Please correct the errors below.");
         } else if (response.status === 503) {
           setSubmitError(
-            "Email service is temporarily unavailable. Please call Russell directly at 021 XXX XXX."
+            `Email service is temporarily unavailable. Please call Russell directly at ${businessConfig.phoneDisplay}.`
           );
         } else {
           setSubmitError(data.error || "Something went wrong. Please try again.");

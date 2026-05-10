@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { businessConfig } from "@/lib/business-config";
 
 interface NavItem {
   label: string;
@@ -26,7 +27,7 @@ export default function MobileNav({ navItems }: { navItems: NavItem[] }) {
             <Link href="/contact#quote" className="btn-primary text-center">
               Request a Quote
             </Link>
-            <a href="tel:+6421XXXXXX" className="btn-secondary text-center">
+            <a href={`tel:${businessConfig.phoneTel}`} className="btn-secondary text-center">
               Call Russell
             </a>
           </div>

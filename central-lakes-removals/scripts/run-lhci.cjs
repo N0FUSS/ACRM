@@ -116,10 +116,12 @@ async function main() {
   fs.rmSync(chromeProfile, { recursive: true, force: true });
   fs.mkdirSync(chromeProfile, { recursive: true });
 
-  const server = spawn("cmd.exe", ["/c", `npm run start -- -p ${serverPort}`], {
+  const npmCmd = process.platform === "win32" ? "npm.cmd" : "npm";
+  const server = spawn(npmCmd, ["run", "start", "--", "-p", String(serverPort)], {
     cwd: root,
     stdio: "inherit",
     windowsHide: true,
+    shell: process.platform === "win32",
   });
 
   let chrome;

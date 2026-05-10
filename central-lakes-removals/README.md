@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Central Lakes Removals - Website
 
-## Getting Started
+## Purpose
+This is the Next.js production website for Central Lakes Removals, a premium, owner-led moving company based in Cromwell, personally led by Russell Brown. The website serves to capture leads and communicate the brand's premium value proposition.
 
-First, run the development server:
+## App Directory Structure
+- `src/app/` - Next.js App Router pages and API routes
+- `src/components/` - Reusable UI components
+- `src/lib/` - Utilities, configuration, and structured data
+- `public/` - Static assets like images and fonts
+- `scripts/` - Utility scripts (e.g., Lighthouse CI runner)
+- `tests/` - Playwright E2E tests
 
-```bash
+## Requirements
+- Node.js (v18 or higher recommended)
+- npm
+
+## Commands
+
+**Install Dependencies:**
+\`\`\`bash
+npm install
+# or
+npm ci
+\`\`\`
+
+**Development Server:**
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Build for Production:**
+\`\`\`bash
+npm run build
+\`\`\`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Linting:**
+\`\`\`bash
+npm run lint
+\`\`\`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**End-to-End Tests:**
+\`\`\`bash
+npm run test:e2e
+\`\`\`
 
-## Learn More
+**Lighthouse Performance Check:**
+\`\`\`bash
+npm run test:lighthouse
+\`\`\`
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The following environment variables are required for the quote form to function:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `RESEND_API_KEY`: Your Resend API key for sending emails
+- `TO_EMAIL`: The email address where quote requests will be sent (e.g., `quote@centrallakesremovals.co.nz`)
+- `FROM_EMAIL`: The email address used as the sender (e.g., `Central Lakes Removals <quote@centrallakesremovals.co.nz>`)
 
-## Deploy on Vercel
+## Deployment Notes
+- This is a Next.js application designed to be deployed on Vercel or any standard Node.js hosting platform.
+- Ensure all environment variables are correctly set in your deployment environment.
+- The `business-config.ts` file acts as the single source of truth for business details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Important Brand Rules
+- **Positioning:** Central Lakes Removals is a premium, owner-led moving company based in Cromwell, personally led by Russell Brown.
+- **Visual Direction:** Dark midnight blue/black background, generous negative space, warm off-white typography, muted grey supporting text, restrained brass CTAs.
+- **Style:** Do NOT make the site generic, cheap, bright, cluttered, cartoonish, or discount-driven.
+- **WARNING - Do not invent claims:** Never invent business claims, reviews, phone numbers, locations, or schema facts. Only use verified claims found in `business-config.ts`.

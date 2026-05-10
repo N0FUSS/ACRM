@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { businessConfig } from "@/lib/business-config";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TypewriterText from "@/components/TypewriterText";
@@ -245,8 +246,8 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
                   <p className="text-sm text-[var(--text-muted)] mb-3">
                     Prefer to talk directly?
                   </p>
-                  <a href="tel:+6421XXXXXX" className="btn-secondary">
-                    Call Russell
+                  <a href={`tel:${businessConfig.phoneTel}`} className="btn-secondary">
+                    Call {businessConfig.ownerName.split(" ")[0]}
                   </a>
                 </div>
               </div>

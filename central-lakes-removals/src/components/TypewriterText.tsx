@@ -119,7 +119,7 @@ export default function TypewriterText({
   };
 
   return (
-    <span className={`typewriter-text ${className}`} style={textStyle} aria-live="polite">
+    <span className={`typewriter-text ${className}`} style={textStyle} aria-hidden="true">
       {text}
       <span aria-hidden="true" style={cursorStyle}>
         |

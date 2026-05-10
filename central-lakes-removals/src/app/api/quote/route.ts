@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { generateEmailHtml, generatePlainTextEmail, QuoteFormData } from "@/lib/email-template";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || "re_dummy_key_for_build");
 
 const TO_EMAIL = process.env.TO_EMAIL || "quote@centrallakesremovals.co.nz";
 const FROM_EMAIL = process.env.FROM_EMAIL || "Central Lakes Removals <quote@centrallakesremovals.co.nz>";
 
-// Rate limiting - simple in-memory store (use Redis in production)
-const requestCounts = new Map<string, { count: number; resetTime: number }>();
+// Rate limiting adapter
+// TODO (Production): Replace this in-memory store with a durable store like Redis or a database table
+// In a serverless environment (like Vercel), this in-memory state will be reset frequently.
+const memoryStore = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT = 5; // Max requests
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in ms
 
@@ -21,11 +23,16 @@ function getClientIP(request: NextRequest): string {
 }
 
 function checkRateLimit(ip: string): { allowed: boolean; remaining: number; resetIn: number } {
+  // Warn if using in-memory store in production without a durable backend
+  if (process.env.NODE_ENV === "production" && !process.env.KV_REST_API_URL && !process.env.DATABASE_URL) {
+    console.warn("WARNING: Using in-memory rate limiter in production. Rate limits will not persist across serverless function invocations.");
+  }
+
   const now = Date.now();
-  const record = requestCounts.get(ip);
+  const record = memoryStore.get(ip);
 
   if (!record || now > record.resetTime) {
-    requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    memoryStore.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
     return { allowed: true, remaining: RATE_LIMIT - 1, resetIn: RATE_LIMIT_WINDOW };
   }
 
@@ -137,6 +144,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Honeypot check - server side
+    const bodyObj = body as Record<string, unknown>;
+    if (typeof bodyObj.website === "string" && bodyObj.website.length > 0) {
+      // Silently pretend success to fool bots
+      return NextResponse.json(
+        {
+          success: true,
+          message: "Thank you! Russell will review your details and be in touch shortly.",
+        },
+        { status: 200 }
+      );
+    }
+
     // Validate form data
     const validation = validateFormData(body);
 
@@ -173,7 +193,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Resend error:", error.message || "Failed to send email");
       return NextResponse.json(
         { success: false, error: "Failed to send email. Please try again or contact us directly." },
         { status: 500 }
@@ -184,7 +204,6 @@ export async function POST(request: NextRequest) {
       {
         success: true,
         message: "Thank you! Russell will review your details and be in touch shortly.",
-        id: data?.id,
       },
       {
         status: 200,
@@ -194,7 +213,7 @@ export async function POST(request: NextRequest) {
       }
     );
   } catch (err) {
-    console.error("Quote API error:", err);
+    console.error("Quote API error:", err instanceof Error ? err.message : "Unknown error");
     return NextResponse.json(
       { success: false, error: "An unexpected error occurred. Please try again." },
       { status: 500 }

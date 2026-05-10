@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { businessConfig } from "@/lib/business-config";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -214,8 +215,8 @@ export default function AboutPage() {
                 <Link href="/contact#quote" className="btn-primary">
                   Request a Quote
                 </Link>
-                <a href="tel:+6421XXXXXX" className="btn-secondary">
-                  Call Russell
+                <a href={`tel:${businessConfig.phoneTel}`} className="btn-secondary">
+                  Call {businessConfig.ownerName.split(" ")[0]}
                 </a>
               </div>
             </div>

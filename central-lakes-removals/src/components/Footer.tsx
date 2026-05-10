@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { businessConfig } from "@/lib/business-config";
 
 const services = [
   { label: "House Moving", href: "/services/house-moving" },
@@ -87,18 +88,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+6421XXXXXX"
+                  href={`tel:${businessConfig.phoneTel}`}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--brass-warm)] transition-colors duration-200"
                 >
-                  021 XXX XXX
+                  {businessConfig.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@centrallakesremovals.co.nz"
+                  href={`mailto:${businessConfig.email}`}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--brass-warm)] transition-colors duration-200"
                 >
-                  info@centrallakesremovals.co.nz
+                  {businessConfig.email}
                 </a>
               </li>
               <li>

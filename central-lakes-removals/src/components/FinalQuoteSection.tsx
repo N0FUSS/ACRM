@@ -1,4 +1,5 @@
 import QuoteFormLoader from "./QuoteFormLoader";
+import { businessConfig } from "@/lib/business-config";
 
 export default function FinalQuoteSection() {
   return (
@@ -32,7 +33,7 @@ export default function FinalQuoteSection() {
                 Prefer to talk directly?
               </p>
               <a
-                href="tel:+6421XXXXXX"
+                href={`tel:${businessConfig.phoneTel}`}
                 className="btn-secondary inline-flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

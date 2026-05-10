@@ -85,7 +85,7 @@ test("reduced motion keeps content visible and usable", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 });
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1, name: /we are your/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(/personally led/i);
   await expectNoHorizontalOverflow(page);
 });
 

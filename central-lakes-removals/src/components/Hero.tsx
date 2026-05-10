@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TypewriterText from "@/components/TypewriterText";
+import { businessConfig } from "@/lib/business-config";
 
 export default function Hero() {
   return (
@@ -20,18 +21,23 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1
-              className="critical-heading typewriter-heading"
+            <h1 className="critical-heading font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight">
+              Your move, personally led by the owner.
+            </h1>
+
+            <div
+              className="typewriter-heading mt-4 font-heading text-xl sm:text-2xl lg:text-3xl text-[var(--text-secondary)]"
+              aria-hidden="true"
               style={{
-                display: "grid",
-                gap: "0.08em",
-                maxWidth: "11ch",
+                display: "flex",
+                gap: "0.25em",
+                minHeight: "1.5em",
                 textTransform: "none",
               }}
             >
               <span>We are your</span>
               <TypewriterText />
-            </h1>
+            </div>
 
             {/* Body */}
             <p className="critical-copy text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-xl animate-on-scroll stagger-2">
@@ -43,8 +49,8 @@ export default function Hero() {
               <Link href="/contact#quote" className="btn-primary text-center">
                 Request a Quote
               </Link>
-              <a href="tel:+64211234567" className="btn-secondary text-center">
-                📞 Call Russell — 027 334 3803
+              <a href={`tel:${businessConfig.phoneTel}`} className="btn-secondary text-center">
+                📞 Call Russell — {businessConfig.phoneDisplay}
               </a>
             </div>
 
@@ -61,11 +67,11 @@ export default function Hero() {
               <div className="image-frame image-vignette aspect-[16/10] lg:aspect-[4/5] overflow-hidden rounded">
                 <Image
                   src="/images/generated/russell-hero.webp"
-                  alt="Russell Brown of Central Lakes Removals"
+                  alt="Russell Brown, owner of Central Lakes Removals"
                   fill
                   className="image-warm object-cover"
-                  sizes="(min-width: 1024px) 38vw, 100vw"
-                  unoptimized
+                  sizes="(min-width: 1024px) 41.6vw, 100vw"
+                  priority
                 />
               </div>
               

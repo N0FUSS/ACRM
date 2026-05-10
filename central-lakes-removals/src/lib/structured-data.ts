@@ -1,31 +1,25 @@
-const siteUrl = "https://centrallakesremovals.co.nz";
+import { businessConfig } from "./business-config";
+
+const siteUrl = businessConfig.siteUrl;
 
 const businessAddress = {
   "@type": "PostalAddress",
-  addressLocality: "Cromwell",
-  addressRegion: "Otago",
-  addressCountry: "NZ",
+  addressLocality: businessConfig.baseLocation.locality,
+  addressRegion: businessConfig.baseLocation.region,
+  addressCountry: businessConfig.baseLocation.country,
 };
 
-const serviceArea = [
-  "Cromwell",
-  "Central Otago",
-  "Queenstown",
-  "Wanaka",
-  "Alexandra",
-  "Christchurch",
-  "Dunedin",
-  "Invercargill",
-  "Lower South Island",
-];
+const serviceArea = businessConfig.serviceAreas;
 
 export function createLocalBusinessJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteUrl}/#local-business`,
-    name: "Central Lakes Removals",
+    name: businessConfig.businessName,
     url: siteUrl,
+    telephone: businessConfig.phoneTel,
+    email: businessConfig.email,
     description:
       "Owner-led moving services based in Cromwell, serving Central Otago and wider South Island routes.",
     address: businessAddress,
@@ -41,8 +35,10 @@ export function createMovingCompanyJsonLd() {
     "@context": "https://schema.org",
     "@type": "MovingCompany",
     "@id": `${siteUrl}/#moving-company`,
-    name: "Central Lakes Removals",
+    name: businessConfig.businessName,
     url: siteUrl,
+    telephone: businessConfig.phoneTel,
+    email: businessConfig.email,
     address: businessAddress,
     areaServed: serviceArea,
     makesOffer: [
@@ -59,7 +55,7 @@ export function createPersonJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${siteUrl}/#russell-brown`,
-    name: "Russell Brown",
+    name: businessConfig.ownerName,
     jobTitle: "Owner and Operator",
     worksFor: {
       "@id": `${siteUrl}/#moving-company`,
