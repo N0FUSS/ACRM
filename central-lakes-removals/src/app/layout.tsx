@@ -12,15 +12,15 @@ const headingFont = Cormorant_Garamond({
   weight: ["500", "600"],
   style: ["normal"],
   variable: "--font-heading-next",
-  display: "optional",
-  preload: false,
+  display: "swap",
+  preload: true,
 });
 
 const bodyFont = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-body-next",
-  display: "optional",
+  display: "swap",
   preload: false,
 });
 

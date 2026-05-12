@@ -13,7 +13,7 @@ export default function FinalQuoteSection() {
                 Get Started
               </span>
               <h2 className="critical-heading">
-                Plan your move.
+                <span className="brass-gradient-text">Plan</span> your move.
               </h2>
             </div>
 

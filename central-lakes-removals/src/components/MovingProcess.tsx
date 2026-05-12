@@ -30,15 +30,15 @@ const steps = [
 
 export default function MovingProcess() {
   return (
-    <section className="section-padding bg-[var(--bg-secondary)]">
+    <section className="section-padding bg-[var(--bg-secondary)] section-topo relative">
       <div className="container">
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-16">
+        <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-16 relative z-10">
           <span className="eyebrow mb-4 block animate-on-scroll">
             Our Process
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            A clear process from first enquiry to final placement.
+            A clear process from <span className="brass-gradient-text">first enquiry</span> to final placement.
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
             A good move starts before the truck arrives. We take the time to understand the details, identify risks, and plan the job properly so move day runs with more clarity and less avoidable pressure.
@@ -48,7 +48,7 @@ export default function MovingProcess() {
         {/* Process Steps - Desktop: Horizontal Timeline */}
         <div className="hidden lg:block relative">
           {/* Timeline line */}
-          <div className="absolute top-16 left-0 right-0 h-0.5 bg-[var(--border-medium)]" />
+          <div className="absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[var(--brass-muted)] to-transparent opacity-50" />
           
           <div className="grid grid-cols-5 gap-6">
             {steps.map((step, index) => (

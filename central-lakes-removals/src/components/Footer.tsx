@@ -6,6 +6,7 @@ const services = [
   { label: "Furniture Moving", href: "/services/furniture-moving" },
   { label: "Long Distance Moving", href: "/services/long-distance" },
   { label: "Packing & Materials", href: "/services/packing" },
+  { label: "Office & Commercial", href: "/services/office-commercial-relocations" },
 ];
 
 const serviceAreas = [
@@ -91,7 +92,15 @@ export default function Footer() {
                   href={`tel:${businessConfig.phoneTel}`}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--brass-warm)] transition-colors duration-200"
                 >
-                  {businessConfig.phoneDisplay}
+                  Free Call: {businessConfig.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${businessConfig.mobileTel}`}
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--brass-warm)] transition-colors duration-200"
+                >
+                  Mobile: {businessConfig.mobileDisplay}
                 </a>
               </li>
               <li>

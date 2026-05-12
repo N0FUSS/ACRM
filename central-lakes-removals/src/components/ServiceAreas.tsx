@@ -21,7 +21,7 @@ export default function ServiceAreas() {
             Service Areas
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            Moving across Central Otago and the Lower South Island.
+            Moving across <span className="brass-gradient-text">Central Otago</span> and the Lower South Island.
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
             Central Lakes Removals is based in Cromwell and provides moving services across Central Otago and wider South Island routes. We regularly support moves involving Cromwell, Queenstown, Wanaka, Alexandra, Christchurch, Dunedin, Invercargill, and surrounding areas.
@@ -42,7 +42,7 @@ export default function ServiceAreas() {
                   {location.label}
                 </span>
                 <svg
-                  className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--brass-primary)] transition-colors duration-200"
+                  className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--brass-primary)] group-hover:animate-bounce transition-colors duration-200"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

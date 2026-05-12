@@ -12,6 +12,7 @@ const routes = [
   "/services/furniture-moving",
   "/services/long-distance",
   "/services/packing",
+  "/services/office-commercial-relocations",
   "/service-areas",
   "/service-areas/cromwell",
   "/service-areas/queenstown",

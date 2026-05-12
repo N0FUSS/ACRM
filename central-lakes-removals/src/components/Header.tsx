@@ -43,7 +43,7 @@ export default function Header() {
               href={`tel:${businessConfig.phoneTel}`}
               className="btn-secondary text-sm px-4 py-2 min-h-0"
             >
-              📞 Call Russell
+              📞 {businessConfig.phoneDisplay}
             </a>
             <Link href="/#quote" className="btn-primary text-sm px-4 py-2 min-h-0">
               Request a Quote

@@ -9,7 +9,7 @@ export default function OwnerLedDifference() {
           {/* Left Column - Heading & Body (60%) */}
           <div className="lg:col-span-7 space-y-8">
             <h2 className="animate-on-scroll">
-              The difference is who leads the move.
+              The difference is <span className="brass-gradient-text">who leads</span> the move.
             </h2>
             
             <div className="space-y-6 animate-on-scroll stagger-1">

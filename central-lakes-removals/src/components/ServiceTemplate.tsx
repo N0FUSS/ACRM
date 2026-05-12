@@ -32,18 +32,8 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
               <h1 className="critical-heading animate-on-scroll stagger-1">
                 {service.name}
               </h1>
-              <div
-                className="landing-typewriter critical-heading animate-on-scroll stagger-1"
-                style={{
-                  display: "grid",
-                  gap: "0.08em",
-                  marginTop: "1.25rem",
-                  maxWidth: "11ch",
-                  fontSize: "clamp(2rem, 8vw, 4.2rem)",
-                  textTransform: "none",
-                }}
-              >
-                <span>We are your</span>
+              <div className="landing-typewriter critical-heading animate-on-scroll stagger-1">
+                <span>We are your...</span>
                 <TypewriterText />
               </div>
               <p className="critical-copy text-base sm:text-xl text-[var(--text-secondary)] mt-5 lg:mt-6 animate-on-scroll stagger-2">
@@ -246,7 +236,7 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
                   <p className="text-sm text-[var(--text-muted)] mb-3">
                     Prefer to talk directly?
                   </p>
-                  <a href={`tel:${businessConfig.phoneTel}`} className="btn-secondary">
+                  <a href={`tel:${businessConfig.mobileTel}`} className="btn-secondary">
                     Call {businessConfig.ownerName.split(" ")[0]}
                   </a>
                 </div>
@@ -267,6 +257,7 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
                 { name: "Furniture Moving", slug: "furniture-moving" },
                 { name: "Long Distance", slug: "long-distance" },
                 { name: "Packing Services", slug: "packing" },
+                { name: "Office & Commercial", slug: "office-commercial-relocations" },
               ].filter(s => s.slug !== service.slug).map((s) => (
                 <Link
                   key={s.slug}

@@ -93,37 +93,9 @@ export default function TypewriterText({
     };
   }, []);
 
-  const textStyle: CSSProperties = {
-    display: "block",
-    width: "100%",
-    minHeight: "2.08em",
-    fontSize: "0.9em",
-    lineHeight: 0.94,
-    color: "transparent",
-    background:
-      "linear-gradient(90deg, var(--brass-soft), var(--brass-primary), var(--brass-warm), var(--brass-primary), var(--brass-deep))",
-    backgroundSize: "220% 100%",
-    backgroundPosition: gradientAtEnd ? "right center" : "left center",
-    backgroundClip: "text",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    transition: "background-position 5s ease-in-out",
-  };
-
-  const cursorStyle: CSSProperties = {
-    display: "inline-block",
-    marginLeft: "0.04em",
-    color: "var(--brass-primary)",
-    opacity: cursorVisible ? 1 : 0,
-    WebkitTextFillColor: "var(--brass-primary)",
-  };
-
   return (
-    <span className={`typewriter-text ${className}`} style={textStyle} aria-hidden="true">
+    <span className={`typewriter-text ${className}`} aria-hidden="true">
       {text}
-      <span aria-hidden="true" style={cursorStyle}>
-        |
-      </span>
     </span>
   );
 }

@@ -33,7 +33,7 @@ export default function ServicesOverview() {
             Moving Services
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            Moving services planned with care and led with experience.
+            Moving services planned with <span className="brass-gradient-text">care</span> and led with experience.
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
             Whether you are moving a full household, a few important items, or relocating across the South Island, Central Lakes Removals provides careful, practical moving support with experienced on site leadership.
@@ -46,7 +46,7 @@ export default function ServicesOverview() {
             <Link
               key={service.href}
               href={service.href}
-              className="card group animate-on-scroll"
+              className="card card-service group animate-on-scroll"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="space-y-4">

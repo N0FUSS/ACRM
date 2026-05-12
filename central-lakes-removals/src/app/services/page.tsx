@@ -32,6 +32,12 @@ const services = [
     slug: "packing",
     tagline: "Professional packing support and materials",
     description: "Packing support and proper moving materials for customers who want added protection, better organisation, and less pressure before move day."
+  },
+  {
+    name: "Office & Commercial",
+    slug: "office-commercial-relocations",
+    tagline: "Professional business relocations",
+    description: "Professional office moving and commercial asset relocation with minimal disruption to business operations."
   }
 ];
 

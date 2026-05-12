@@ -150,6 +150,43 @@ const services = {
       { title: "Packing", description: "Careful, systematic packing begins." },
       { title: "Labelling", description: "Everything is clearly marked for easy unpacking." }
     ]
+  },
+  "office-commercial-relocations": {
+    name: "Office and Commercial Relocations",
+    slug: "office-commercial-relocations",
+    tagline: "Professional office moving and commercial asset relocation with minimal disruption to business operations.",
+    description: "Relocating a business demands tight coordination, minimal downtime, and secure handling of assets and sensitive items. Central Lakes Removals understands the logistical demands of moving commercial spaces, retail inventory, and office environments. Russell Brown plans every phase with your operational schedule in mind, ensuring a smooth transition so your team can return to work as quickly as possible.",
+    whatIncluded: [
+      "Pre-relocation timeline planning",
+      "Systematic furniture and asset tagging",
+      "Specialized equipment handling",
+      "Sequential packing and loading",
+      "Coordination with building managers",
+      "Placement at destination layout",
+      "Direct oversight by Russell Brown"
+    ],
+    whatAffectsPrice: [
+      "Size of commercial premises",
+      "Volume of specialized equipment",
+      "Building access timings and protocols",
+      "Required sequence of arrival",
+      "Off-hours or weekend scheduling",
+      "Packing assistance required"
+    ],
+    commonSituations: [
+      "Office relocations and fit-outs",
+      "Retail inventory and store transfers",
+      "Asset distribution to storage",
+      "Internal departmental rearrangements",
+      "Downsizing commercial space",
+      "New business set-ups"
+    ],
+    processSteps: [
+      { title: "Site Audit", description: "Assessment of access routes and item volume." },
+      { title: "Logistical Plan", description: "Setting clear timelines to minimize downtime." },
+      { title: "Controlled Move", description: "Coordinated and orderly transport of assets." },
+      { title: "Layout Execution", description: "Precise placement as per the floorplan." }
+    ]
   }
 };
 
