@@ -19,12 +19,12 @@ const milestones = [
   {
     year: "Establishment",
     title: "Starting Central Lakes Removals",
-    description: "With thousands of moves behind him, Russell established Central Lakes Removals with a clear vision: provide premium moving services where the owner is personally involved in every move."
+    description: "With thousands of moves behind him, Russell established Central Lakes Removals with one principle: the person making the decisions on site should be the person accountable for the outcome."
   },
   {
     year: "Growth",
     title: "Expanding the South Island",
-    description: "As reputation grew through careful work and personal accountability, Central Lakes Removals expanded to serve more of the South Island while maintaining the owner-led approach."
+    description: "As reputation grew through careful work and direct accountability, Central Lakes Removals expanded to serve more of the South Island — with Russell's judgement and standards applied to every job."
   },
   {
     year: "Today",
@@ -91,15 +91,15 @@ export default function AboutPage() {
 
                 <div className="space-y-6 animate-on-scroll stagger-2">
                   <p className="hidden critical-copy text-base sm:block sm:text-xl text-[var(--text-secondary)]">
-                    Central Lakes Removals is personally led by Russell Brown, an experienced owner operator with more than 12,000 relocations behind him.
+                    Russell Brown has personally led more than 12,000 relocations — assessing risk, reading situations, and making the decisions that protect your belongings and your time.
                   </p>
                   
                   <p className="hidden critical-copy text-base sm:block sm:text-lg text-[var(--text-secondary)]">
-                    Russell is directly involved in the planning, communication, and physical execution of each move. That gives customers a level of accountability that is rare in the moving industry.
+                    The result is a move where someone experienced is watching, thinking, and adjusting — not just lifting.
                   </p>
                   
                   <p className="hidden text-lg text-[var(--text-secondary)] sm:block">
-                    The result is a more careful, more considered, and more personal moving experience.
+                    Every move is led by Russell Brown — his judgement, his standards, his accountability.
                   </p>
                 </div>
 
@@ -126,7 +126,7 @@ export default function AboutPage() {
                       100%
                     </div>
                     <div className="text-sm text-[var(--text-muted)]">
-                      Personally Led
+                      Russell-Led
                     </div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 Ready to Work with Russell?
               </h2>
               <p className="text-lg text-[var(--text-secondary)] mb-8 animate-on-scroll stagger-1">
-                Every move with Central Lakes Removals is personally led by Russell Brown. Get in touch to discuss your move.
+                Every move is led by Russell Brown — his judgement, his standards, his accountability. Get in touch to discuss your move.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll stagger-2">
                 <Link href="/contact#quote" className="btn-primary">

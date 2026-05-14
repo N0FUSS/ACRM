@@ -57,7 +57,7 @@ export default function ServicesPage() {
                 Moving services.
               </h1>
               <p className="critical-copy hidden text-base sm:block sm:text-xl text-[var(--text-secondary)] mt-5 lg:mt-6 animate-on-scroll stagger-2">
-                Whether you are moving a full household, a few important items, or relocating across the South Island, Central Lakes Removals provides careful, practical moving support with experienced on site leadership.
+                Whether you are moving a full household, a few important items, or relocating across the South Island, every job is assessed and led by Russell Brown — with the judgement and accountability that comes from 12,000+ relocations.
               </p>
             </div>
           </div>
@@ -101,10 +101,10 @@ export default function ServicesPage() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl lg:text-3xl font-heading mb-6 animate-on-scroll">
-                Every Move Personally Led by Russell Brown
+                Every Move Led by Russell Brown's Judgement
               </h2>
               <p className="text-lg text-[var(--text-secondary)] animate-on-scroll stagger-1">
-                With Central Lakes Removals, your move is not handed off to a faceless crew. Russell Brown personally leads the work, plans the details, manages the team, and stays accountable for the result.
+                Russell Brown doesn't just show up — he assesses, plans, decides, and leads the work on site. That direct involvement means problems are caught early, your belongings are handled to his standards, and you have one person accountable from start to finish.
               </p>
               <div className="mt-8 animate-on-scroll stagger-2">
                 <Link href="/contact#quote" className="btn-primary">

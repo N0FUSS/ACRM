@@ -167,7 +167,7 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
                         </svg>
                       </div>
                       <span className="text-sm text-[var(--text-secondary)]">
-                        Owner-led moving with Russell Brown
+                        Russell Brown&apos;s judgement on every move
                       </span>
                     </li>
                     <li className="flex items-start gap-3">

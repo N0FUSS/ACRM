@@ -7,7 +7,7 @@ const serviceAreas = {
     name: "Cromwell",
     slug: "cromwell",
     region: "Central Otago",
-    description: "Central Lakes Removals is based in Cromwell, providing professional moving services throughout Central Otago and the wider South Island. As your local Cromwell movers, we offer carefully planned, owner-led moving services for households and businesses in the Cromwell basin and surrounding areas.",
+    description: "Central Lakes Removals is based in Cromwell, providing professional moving services throughout Central Otago and the wider South Island. As your local Cromwell movers, Russell Brown plans and leads every move for households and businesses in the Cromwell basin and surrounding areas.",
     routes: [
       "Cromwell to Queenstown",
       "Cromwell to Wanaka",
@@ -32,7 +32,7 @@ const serviceAreas = {
     name: "Queenstown",
     slug: "queenstown",
     region: "Central Otago",
-    description: "Central Lakes Removals provides professional moving services involving Queenstown. Based in Cromwell, we regularly support moves to, from, and around the Queenstown area. Every Queenstown move is personally led by Russell Brown with the same level of care and attention as our Cromwell-based operations.",
+    description: "Central Lakes Removals provides professional moving services involving Queenstown. Based in Cromwell, we regularly support moves to, from, and around the Queenstown area. Every Queenstown move is led by Russell Brown — the same judgement, standards, and direct accountability as moves from our Cromwell base.",
     routes: [
       "Queenstown to Cromwell",
       "Queenstown to Wanaka",
@@ -54,7 +54,7 @@ const serviceAreas = {
     name: "Wanaka",
     slug: "wanaka",
     region: "Otago",
-    description: "Central Lakes Removals provides professional moving services involving Wanaka. Regular routes between Wanaka and Cromwell, Queenstown, and other South Island destinations are handled with the same owner-led approach. Russell Brown personally oversees all moves to ensure consistent quality.",
+    description: "Central Lakes Removals provides professional moving services involving Wanaka. Regular routes between Wanaka and Cromwell, Queenstown, and other South Island destinations are handled with the same standards and accountability. Russell Brown leads all moves directly, applying the same judgement regardless of location.",
     routes: [
       "Wanaka to Cromwell",
       "Wanaka to Queenstown",
@@ -75,7 +75,7 @@ const serviceAreas = {
     name: "Alexandra",
     slug: "alexandra",
     region: "Central Otago",
-    description: "Central Lakes Removals provides professional moving services involving Alexandra and the wider Alexandra basin. Regular routes between Alexandra and Cromwell, Queenstown, and other South Island destinations are handled with experienced, owner-led execution.",
+    description: "Central Lakes Removals provides professional moving services involving Alexandra and the wider Alexandra basin. Regular routes between Alexandra and Cromwell, Queenstown, and other South Island destinations are handled with Russell Brown's direct leadership and practical experience.",
     routes: [
       "Alexandra to Cromwell",
       "Alexandra to Queenstown",
@@ -198,7 +198,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `Professional moving services in ${location.name}. ${location.description}`,
     openGraph: {
       title: `${location.name} Movers | Central Lakes Removals`,
-      description: `Premium moving services in ${location.name}. Owner-led by Russell Brown.`,
+      description: `Professional moving services in ${location.name}. Led by Russell Brown — 12,000+ relocations.`,
     },
   };
 }

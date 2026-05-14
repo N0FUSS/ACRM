@@ -33,10 +33,10 @@ export default function ServicesOverview() {
             Moving Services
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            Moving services planned with <span className="brass-gradient-text">care</span> and led with experience.
+            Moving services planned by <span className="brass-gradient-text">Russell Brown</span> and led to his standards.
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
-            Whether you are moving a full household, a few important items, or relocating across the South Island, Central Lakes Removals provides careful, practical moving support with experienced on site leadership.
+            Whether you are moving a full household, a few important items, or relocating across the South Island, every job is assessed and led by Russell Brown — with the judgement and accountability that comes from 12,000+ relocations.
           </p>
         </div>
 

@@ -9,12 +9,12 @@ export default function OwnerLedDifference() {
           {/* Left Column - Heading & Body (60%) */}
           <div className="lg:col-span-7 space-y-8">
             <h2 className="animate-on-scroll">
-              The difference is <span className="brass-gradient-text">who leads</span> the move.
+              The difference is not the truck. It's <span className="brass-gradient-text">who's making the calls</span>.
             </h2>
             
             <div className="space-y-6 animate-on-scroll stagger-1">
               <p className="text-lg text-[var(--text-secondary)]">
-                With Central Lakes Removals, your move is not handed off to a faceless crew. Russell Brown personally leads the work, plans the details, manages the team, and stays accountable for the result.
+                Russell Brown doesn't just show up on move day. He assesses access, sequences the load, reads the pressure points in your property, and makes the decisions that prevent damage, delay, and unnecessary stress.
               </p>
               
               <p className="text-lg text-[var(--text-secondary)]">
@@ -22,20 +22,20 @@ export default function OwnerLedDifference() {
               </p>
               
               <p className="text-lg text-[var(--text-secondary)]">
-                When the owner is on site, those decisions are made by the person whose name is on the business.
+                When Russell is on site, those calls are made by someone with 12,000+ relocations behind him — not a crew leader checking a clipboard.
               </p>
             </div>
 
             {/* Pull Quote */}
             <blockquote className="border-l-2 border-[var(--brass-primary)] pl-6 py-2 animate-on-scroll stagger-2">
               <p className="text-xl lg:text-2xl font-heading text-[var(--text-primary)] italic leading-relaxed">
-                You are not just booking a truck. You are trusting someone with your home, your belongings, and your peace of mind.
+                You are not just booking a truck. You are trusting Russell Brown with your home, your belongings, and your peace of mind.
               </p>
             </blockquote>
 
             <div className="animate-on-scroll stagger-3">
               <Link href="/about" className="text-link inline-flex items-center gap-2">
-                Why Owner Led Moving Matters
+                Why Russell Brown Matters
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

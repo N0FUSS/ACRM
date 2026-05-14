@@ -7,7 +7,7 @@ const services = {
     name: "House Moving",
     slug: "house-moving",
     tagline: "Carefully planned household moves for people who want their furniture, belongings, and property treated with respect.",
-    description: "House moving is about more than just transporting furniture from one address to another. It's about handling someone's home—their memories, their investments, and their everyday life. Central Lakes Removals approaches every house move with the care and attention it deserves. Russell Brown personally oversees each move, ensuring proper planning, careful handling, and clear communication throughout the process. Whether you're moving across town or across the region, you can trust that your home is in experienced hands.",
+    description: "House moving is about more than just transporting furniture from one address to another. It's about handling someone's home—their memories, their investments, and their everyday life. Central Lakes Removals approaches every house move with the care and attention it deserves. Russell Brown personally assesses each move, plans the approach, and leads the work on site — making the decisions that protect your property and keep the day on track. Whether you are moving across town or across the region, Russell's judgement and standards are applied directly.",
     whatIncluded: [
       "Pre-move consultation and planning",
       "Full household inventory assessment",
@@ -15,7 +15,7 @@ const services = {
       "Careful loading and unloading",
       "Furniture protection and placement",
       "Clear communication throughout",
-      "Direct Russell Brown involvement"
+      "Russell Brown's direct leadership and decision-making"
     ],
     whatAffectsPrice: [
       "Distance between properties",
@@ -81,7 +81,7 @@ const services = {
     name: "Long Distance Moving",
     slug: "long-distance",
     tagline: "Reliable long distance moving across Central Otago, Queenstown, Wanaka, Christchurch, Dunedin, Invercargill, and wider South Island routes.",
-    description: "Long distance moves require additional planning and logistics. Routes between Central Otago and Christchurch, Dunedin, or Invercargill are handled regularly by Central Lakes Removals. Russell Brown personally coordinates these extended moves, ensuring your belongings are secure for the longer journey and arrive on time. The same owner-led approach applies regardless of distance—your move is led by the person whose name is on the business.",
+    description: "Long distance moves require additional planning and logistics. Routes between Central Otago and Christchurch, Dunedin, or Invercargill are handled regularly by Central Lakes Removals. Russell applies the same judgement and standards regardless of distance — assessing, planning, and leading the job from first load to final placement. The same owner-led approach applies regardless of distance—your move is led by the person whose name is on the business.",
     whatIncluded: [
       "Detailed route planning",
       "Secure loading and containment",

@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const proofPoints = [
-  { label: "Owner operator" },
-  { label: "Personally leads each move" },
+  { label: "Applied judgement on every move" },
+  { label: "Leads and decides on site" },
   { label: "12,000+ relocations" },
   { label: "Based in Cromwell" },
   { label: "One dedicated team" },
@@ -44,7 +44,7 @@ export default function AboutRussell() {
 
             <div className="space-y-6 animate-on-scroll stagger-2">
               <p className="text-lg text-[var(--text-secondary)]">
-                Central Lakes Removals is personally led by Russell Brown, an experienced owner operator with more than 12,000 relocations behind him.
+                Russell Brown has personally led more than 12,000 relocations — assessing risk, reading situations, and making the decisions that protect your belongings and your time.
               </p>
               
               <p className="text-lg text-[var(--text-secondary)]">
@@ -52,7 +52,7 @@ export default function AboutRussell() {
               </p>
               
               <p className="text-lg text-[var(--text-secondary)]">
-                The result is a more careful, more considered, and more personal moving experience.
+                The result is a move where someone experienced is watching, thinking, and adjusting — not just lifting.
               </p>
             </div>
 

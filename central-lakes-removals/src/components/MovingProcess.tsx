@@ -14,7 +14,7 @@ const steps = [
   {
     number: "3",
     title: "Your move is personally led",
-    description: "The team arrives with a clear plan, proper equipment, and experienced leadership on site.",
+    description: "Russell and the team arrive with a clear plan, proper equipment, and his direct leadership on site.",
   },
   {
     number: "4",
@@ -24,7 +24,7 @@ const steps = [
   {
     number: "5",
     title: "Loose ends are followed through",
-    description: "If anything needs clarification, adjustment, or follow up, you deal directly with the person responsible.",
+    description: "If anything needs clarification, adjustment, or follow up, you deal directly with Russell.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function MovingProcess() {
             A clear process from <span className="brass-gradient-text">first enquiry</span> to final placement.
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
-            A good move starts before the truck arrives. We take the time to understand the details, identify risks, and plan the job properly so move day runs with more clarity and less avoidable pressure.
+            A good move starts before the truck arrives. Russell reviews the details, identifies risks, and plans the job properly so move day runs with more clarity and less avoidable pressure.
           </p>
         </div>
 

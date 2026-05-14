@@ -93,7 +93,7 @@ export default function ServiceAreaTemplate({ location }: ServiceAreaTemplatePro
                           {service}
                         </h3>
                         <p className="text-sm text-[var(--text-secondary)]">
-                          Professional moving services with owner-led execution
+                          Assessed and led by Russell Brown
                         </p>
                       </div>
                     ))}

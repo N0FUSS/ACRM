@@ -50,7 +50,7 @@ export default function Hero() {
               </div>
               <div>
                 <span className="eyebrow">
-                  Owner-Led Moving · Cromwell, Central Otago
+                  Russell Brown · Cromwell, Central Otago
                 </span>
                 {/* Availability signal */}
                 <span className="block mt-1 text-xs text-[var(--text-muted)] font-medium">
@@ -62,7 +62,7 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="critical-heading font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight">
-              Your move, personally led by the owner.
+              The person leading your move is the difference.
             </h1>
 
             <div
@@ -75,7 +75,7 @@ export default function Hero() {
 
             {/* Body */}
             <p className="critical-copy text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-xl animate-on-scroll stagger-2">
-              Every move is planned, managed, and physically led by Russell Brown. Not a call centre. Not a franchise. One experienced owner, one dedicated team, one standard of care.
+              Every move is assessed, planned, and physically led by Russell Brown — 12,000+ relocations of applied judgement, careful standards, and direct accountability. Not a call centre. Not a franchise. One experienced operator who notices what others miss.
             </p>
 
             {/* CTAs */}
@@ -99,7 +99,7 @@ export default function Hero() {
                 <GoogleStars />
               </span>
               <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> 12,000+ Relocations</span>
-              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> Owner on Every Move</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> Russell Brown on Every Move</span>
             </div>
           </div>
 

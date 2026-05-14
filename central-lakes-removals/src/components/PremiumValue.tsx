@@ -16,18 +16,18 @@ export default function PremiumValue() {
               The cheapest move can become expensive when care, planning, and accountability are missing.
             </p>
             <p className="text-xl text-[var(--text-secondary)]">
-              A quality move depends on judgement, sequencing, protection, communication, and experience. Central Lakes Removals is built for customers who value their belongings, their time, and the confidence that the job is being led properly.
+              A quality move depends on judgement, sequencing, protection, communication, and experience. Russell Brown brings all five to every job — and has done across 12,000+ relocations.
             </p>
           </div>
 
           {/* Supporting Line */}
           <p className="text-lg font-heading text-[var(--brass-primary)] italic animate-on-scroll stagger-2">
-            You are not just paying for a truck. You are paying for experienced leadership, careful handling, practical problem solving, and someone who takes personal responsibility for the result.
+            You are not just paying for a truck. You are paying for Russell Brown's experienced judgement, careful handling, practical problem solving, and direct personal responsibility for the result.
           </p>
 
           {/* Final Line */}
           <p className="text-lg text-[var(--text-secondary)] animate-on-scroll stagger-3">
-            If you want the move done carefully, calmly, and professionally, we are built for that.
+            If you want the move done carefully, calmly, and professionally — Russell is built for that.
           </p>
 
           {/* CTA */}

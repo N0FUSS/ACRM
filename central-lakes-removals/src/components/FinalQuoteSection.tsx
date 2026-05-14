@@ -19,7 +19,7 @@ export default function FinalQuoteSection() {
 
             <div className="space-y-5 animate-on-scroll stagger-2">
               <p className="critical-copy hidden text-base sm:block lg:text-lg text-[var(--text-secondary)]">
-                Tell us where you are moving from, where you are moving to, and what needs to be moved. Russell will review the details.
+                Tell us where you are moving from, where you are moving to, and what needs to be moved. Russell will assess the job personally.
               </p>
               
               <p className="hidden text-[var(--text-secondary)] sm:block">
