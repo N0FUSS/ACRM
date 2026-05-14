@@ -3,6 +3,14 @@
 ## Purpose
 This is the Next.js production website for Central Lakes Removals, a premium, owner-led moving company based in Cromwell, personally led by Russell Brown. The website serves to capture leads and communicate the brand's premium value proposition.
 
+## Strategic Documentation
+The following documents define the "Russell Brown differentiator" positioning and brand continuity for all future work on this site:
+
+- [Master Control Brief](docs/01_CLR_Website_Master_Control_Brief.md) - The core strategic and positioning framework.
+- [Homepage Coding Agent Prompt](docs/02_CLR_Homepage_Coding_Agent_Prompt.md) - Detailed layout, copy, and component requirements for the homepage.
+- [Visual Brand Continuity Guide](docs/03_CLR_Visual_Brand_Continuity_Guide.md) - Visual personality, color system, and design rhythm rules.
+- [Prompt Pack Context](docs/PROMPTS_README.md) - Overview of the strategic documentation package.
+
 ## App Directory Structure
 - `src/app/` - Next.js App Router pages and API routes
 - `src/components/` - Reusable UI components
