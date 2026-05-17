@@ -10,20 +10,20 @@ export default function FinalQuoteSection() {
           <div className="lg:col-span-5 space-y-8">
             <div>
               <span className="eyebrow mb-4 block animate-on-scroll">
-                Get Started
+                Request a Quote
               </span>
               <h2 className="critical-heading">
-                <span className="brass-gradient-text">Plan</span> your move.
+                Tell Russell what needs to be moved.
               </h2>
             </div>
 
             <div className="space-y-5 animate-on-scroll stagger-2">
               <p className="critical-copy hidden text-base sm:block lg:text-lg text-[var(--text-secondary)]">
-                Tell us where you are moving from, where you are moving to, and what needs to be moved. Russell will assess the job personally.
+                Send through where you are moving from, where you are moving to, your preferred date, access notes, and the main items involved.
               </p>
-              
+
               <p className="hidden text-[var(--text-secondary)] sm:block">
-                The more detail you provide, the easier it is to plan your move accurately.
+                The more useful detail you provide, the easier it is to plan the job properly.
               </p>
             </div>
 

@@ -36,9 +36,9 @@ const proofBlocks = [
     isGoogle: true,
   },
   {
-    stat: "100%",
-    label: "Personally Led Moves",
-    description: "Russell is directly involved in the planning and execution of every move.",
+    stat: "Real",
+    label: "Customer Feedback",
+    description: "Reviews should show what customers actually experienced, not polished marketing claims.",
   },
 ];
 
@@ -60,10 +60,10 @@ export default function ReputationReviews() {
             Reputation
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            Trusted by customers who want their move <span className="brass-gradient-text">done properly.</span>
+            Care is easiest to trust when <span className="brass-gradient-text">other customers have seen it.</span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
-            Central Lakes Removals has built its reputation through careful handling, clear communication, reliable planning, and personal accountability on move day.
+            The strongest proof is what customers notice after the work is done: careful handling, clear communication, hard work, calm problem solving, and a move that felt properly managed.
           </p>
         </div>
 

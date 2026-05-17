@@ -7,27 +7,22 @@ export default function PremiumValue() {
         <div className="max-w-3xl mx-auto text-center space-y-8">
           {/* Headline */}
           <h2 className="text-3xl lg:text-5xl animate-on-scroll">
-            Good moving is not just transport.
+            A cheaper move is not always a lower cost.
           </h2>
-          
+
           {/* Body */}
           <div className="space-y-6 animate-on-scroll stagger-1">
             <p className="text-xl text-[var(--text-secondary)]">
-              The cheapest move can become expensive when care, planning, and accountability are missing.
+              Poor planning can cost more than the quote difference.
             </p>
             <p className="text-xl text-[var(--text-secondary)]">
-              A quality move depends on judgement, sequencing, protection, communication, and experience. Russell Brown brings all five to every job — and has done across 12,000+ relocations.
+              Damage, delays, rushed loading, settlement pressure, access problems, and avoidable confusion all carry a cost. Central Lakes Removals is built for customers who value their belongings, their time, and the confidence that the job is being handled properly.
             </p>
           </div>
 
           {/* Supporting Line */}
           <p className="text-lg font-heading text-[var(--brass-primary)] italic animate-on-scroll stagger-2">
-            You are not just paying for a truck. You are paying for Russell Brown's experienced judgement, careful handling, practical problem solving, and direct personal responsibility for the result.
-          </p>
-
-          {/* Final Line */}
-          <p className="text-lg text-[var(--text-secondary)] animate-on-scroll stagger-3">
-            If you want the move done carefully, calmly, and professionally — Russell is built for that.
+            Paying for judgement is usually cheaper than paying for mistakes.
           </p>
 
           {/* CTA */}

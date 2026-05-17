@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import TypewriterText from "@/components/TypewriterText";
 import { businessConfig } from "@/lib/business-config";
 
 function GoogleStars() {
@@ -31,7 +30,7 @@ export default function Hero() {
     <section className="relative flex items-start pt-12 pb-10 sm:min-h-[calc(100svh-5rem)] sm:items-center sm:py-10 lg:min-h-[calc(100svh-6rem)] lg:py-16">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-primary)] to-[var(--bg-secondary)] opacity-50" />
-      
+
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column - Copy (52%) */}
@@ -50,7 +49,7 @@ export default function Hero() {
               </div>
               <div>
                 <span className="eyebrow">
-                  Russell Brown · Cromwell, Central Otago
+                  Central Otago moving, planned before the pressure starts
                 </span>
                 {/* Availability signal */}
                 <span className="block mt-1 text-xs text-[var(--text-muted)] font-medium">
@@ -62,20 +61,12 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="critical-heading font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight">
-              The person leading your move is the difference.
+              A good move is decided before the heavy lifting starts.
             </h1>
-
-            <div
-              className="typewriter-heading mt-4 font-heading text-xl sm:text-2xl lg:text-3xl text-[var(--text-secondary)]"
-              aria-hidden="true"
-            >
-              <span>We are your...</span>
-              <TypewriterText />
-            </div>
 
             {/* Body */}
             <p className="critical-copy text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-xl animate-on-scroll stagger-2">
-              Every move is assessed, planned, and physically led by Russell Brown — 12,000+ relocations of applied judgement, careful standards, and direct accountability. Not a call centre. Not a franchise. One experienced operator who notices what others miss.
+              Access, timing, stairs, fragile items, loading order, weather, settlement windows, and tight spaces can all change the outcome of a move. Central Lakes Removals is built around careful planning, practical judgement, and direct accountability from Russell Brown.
             </p>
 
             {/* CTAs */}
@@ -99,7 +90,7 @@ export default function Hero() {
                 <GoogleStars />
               </span>
               <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> 12,000+ Relocations</span>
-              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> Russell Brown on Every Move</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> Based in Cromwell</span>
             </div>
           </div>
 
@@ -115,7 +106,7 @@ export default function Hero() {
                   priority
                 />
               </div>
-              
+
               <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-[var(--brass-muted)] rounded -z-10 opacity-30" />
             </div>
           </div>

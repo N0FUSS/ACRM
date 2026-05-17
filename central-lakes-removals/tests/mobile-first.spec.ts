@@ -85,7 +85,7 @@ test("reduced motion keeps content visible and usable", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 });
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(/personally led/i);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(/A good move is decided/i);
   await expectNoHorizontalOverflow(page);
 });
 
@@ -110,9 +110,12 @@ test("quote form validates and can show the success state", async ({ page }) => 
 
   await form.getByLabel("Name").fill("Test Customer");
   await form.getByLabel("Phone").fill("021 555 123");
-  await form.getByLabel("Email").fill("test@example.com");
   await form.getByLabel("Moving from").fill("Cromwell");
   await form.getByLabel("Moving to").fill("Wanaka");
+  
+  await form.getByRole("button", { name: "Continue →" }).click();
+
+  await form.getByLabel("Email").fill("test@example.com");
   await form.getByLabel("Type of move").selectOption("house");
 
   await expect

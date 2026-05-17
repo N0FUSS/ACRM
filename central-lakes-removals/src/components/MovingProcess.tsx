@@ -8,13 +8,13 @@ const steps = [
   },
   {
     number: "2",
-    title: "We review the details",
-    description: "Russell looks over the move, considers the practical requirements, and helps identify what needs to be planned before move day.",
+    title: "We review the practical details",
+    description: "The move is checked for access, timing, inventory, route, risk, and anything that may need extra planning.",
   },
   {
     number: "3",
-    title: "Your move is personally led",
-    description: "Russell and the team arrive with a clear plan, proper equipment, and his direct leadership on site.",
+    title: "The job is planned before arrival",
+    description: "The team arrives with the right equipment, a clear approach, and an understanding of the move day priorities.",
   },
   {
     number: "4",
@@ -24,7 +24,7 @@ const steps = [
   {
     number: "5",
     title: "Loose ends are followed through",
-    description: "If anything needs clarification, adjustment, or follow up, you deal directly with Russell.",
+    description: "If anything needs clarification, adjustment, or follow up, you deal directly with the person responsible.",
   },
 ];
 
@@ -38,10 +38,10 @@ export default function MovingProcess() {
             Our Process
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            A clear process from <span className="brass-gradient-text">first enquiry</span> to final placement.
+            A clear process before <span className="brass-gradient-text">moving day pressure</span> builds.
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
-            A good move starts before the truck arrives. Russell reviews the details, identifies risks, and plans the job properly so move day runs with more clarity and less avoidable pressure.
+            A good move starts with the right information. The process helps us understand what needs to happen, what could complicate the job, and how the move should be approached.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function MovingProcess() {
         <div className="hidden lg:block relative">
           {/* Timeline line */}
           <div className="absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[var(--brass-muted)] to-transparent opacity-50" />
-          
+
           <div className="grid grid-cols-5 gap-6">
             {steps.map((step, index) => (
               <div
@@ -63,7 +63,7 @@ export default function MovingProcess() {
                     {step.number}
                   </span>
                 </div>
-                
+
                 {/* Content */}
                 <div className="text-center">
                   <h3 className="text-lg font-heading font-medium text-[var(--text-primary)] mb-3">
@@ -92,7 +92,7 @@ export default function MovingProcess() {
                   {step.number}
                 </span>
               </div>
-              
+
               {/* Content */}
               <div className="pt-2">
                 <h3 className="text-lg font-heading font-medium text-[var(--text-primary)] mb-2">

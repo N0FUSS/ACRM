@@ -3,22 +3,22 @@ import Link from "next/link";
 const services = [
   {
     title: "House Moving",
-    description: "Carefully planned household moves for people who want their furniture, belongings, and property treated with respect.",
+    description: "Full household moves planned around access, timing, furniture protection, loading order, and the details that can make move day easier.",
     href: "/services/house-moving",
   },
   {
     title: "Furniture Moving",
-    description: "Skilled handling for valuable, heavy, awkward, fragile, or difficult furniture that needs more than rough transport.",
+    description: "Careful handling for valuable, heavy, awkward, fragile, or difficult furniture that needs more than rough transport.",
     href: "/services/furniture-moving",
   },
   {
     title: "Long Distance Moving",
-    description: "Reliable long distance moving across Central Otago, Queenstown, Wanaka, Christchurch, Dunedin, Invercargill, and wider South Island routes.",
+    description: "Regional and intercity moving across Central Otago, Queenstown, Wanaka, Christchurch, Dunedin, Invercargill, and wider South Island routes.",
     href: "/services/long-distance",
   },
   {
     title: "Packing & Materials",
-    description: "Packing support and proper moving materials for customers who want added protection, better organisation, and less pressure before move day.",
+    description: "Packing support and proper moving materials for customers who want better protection, better organisation, and less pressure before move day.",
     href: "/services/packing",
   },
 ];
@@ -33,10 +33,10 @@ export default function ServicesOverview() {
             Moving Services
           </span>
           <h2 className="animate-on-scroll stagger-1">
-            Moving services planned by <span className="brass-gradient-text">Russell Brown</span> and led to his standards.
+            The right moving support for <span className="brass-gradient-text">the job in front of us.</span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mt-4 animate-on-scroll stagger-2">
-            Whether you are moving a full household, a few important items, or relocating across the South Island, every job is assessed and led by Russell Brown — with the judgement and accountability that comes from 12,000+ relocations.
+            Every move has a different risk profile. A full household, a single difficult item, a long distance route, and packing fragile belongings all need different planning.
           </p>
         </div>
 

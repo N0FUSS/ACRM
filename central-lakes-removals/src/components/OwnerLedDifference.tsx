@@ -9,27 +9,23 @@ export default function OwnerLedDifference() {
           {/* Left Column - Heading & Body (60%) */}
           <div className="lg:col-span-7 space-y-8">
             <h2 className="animate-on-scroll">
-              The difference is not the truck. It's <span className="brass-gradient-text">who's making the calls</span>.
+              Judgement shows up in the <span className="brass-gradient-text">small decisions.</span>
             </h2>
-            
+
             <div className="space-y-6 animate-on-scroll stagger-1">
               <p className="text-lg text-[var(--text-secondary)]">
-                Russell Brown doesn't just show up on move day. He assesses access, sequences the load, reads the pressure points in your property, and makes the decisions that prevent damage, delay, and unnecessary stress.
+                A move is shaped by dozens of practical calls: what comes out first, what needs protection, what should not be stacked, how to handle a tight corner, where time can be saved, and where rushing will cost more later.
               </p>
-              
+
               <p className="text-lg text-[var(--text-secondary)]">
-                Moving is full of small decisions that affect the outcome. Access, timing, protection, loading order, difficult items, tight spaces, weather, stairs, long driveways, settlement timing, and customer priorities all need judgement on the day.
-              </p>
-              
-              <p className="text-lg text-[var(--text-secondary)]">
-                When Russell is on site, those calls are made by someone with 12,000+ relocations behind him — not a crew leader checking a clipboard.
+                Russell Brown leads those decisions directly. That matters because the person making the calls is also the person accountable for the result.
               </p>
             </div>
 
             {/* Pull Quote */}
             <blockquote className="border-l-2 border-[var(--brass-primary)] pl-6 py-2 animate-on-scroll stagger-2">
               <p className="text-xl lg:text-2xl font-heading text-[var(--text-primary)] italic leading-relaxed">
-                You are not just booking a truck. You are trusting Russell Brown with your home, your belongings, and your peace of mind.
+                The difference is not a bigger promise. It is better judgement at the moments that matter.
               </p>
             </blockquote>
 
@@ -48,12 +44,12 @@ export default function OwnerLedDifference() {
               <div className="image-frame image-vignette aspect-square">
                 <Image
                   src="/images/generated/owner-led-move.webp"
-                  alt="Generated interim scene of an owner-led moving team carefully handling furniture"
-                fill
-                className="image-warm object-cover"
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                unoptimized
-              />
+                  alt="Generated interim scene of the Central Lakes Removals team carefully handling furniture"
+                  fill
+                  className="image-warm object-cover"
+                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  unoptimized
+                />
               </div>
             </div>
           </div>

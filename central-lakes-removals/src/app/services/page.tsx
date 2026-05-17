@@ -101,10 +101,10 @@ export default function ServicesPage() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl lg:text-3xl font-heading mb-6 animate-on-scroll">
-                Every Move Led by Russell Brown's Judgement
+                Every Move Led by Russell Brown&apos;s Judgement
               </h2>
               <p className="text-lg text-[var(--text-secondary)] animate-on-scroll stagger-1">
-                Russell Brown doesn't just show up — he assesses, plans, decides, and leads the work on site. That direct involvement means problems are caught early, your belongings are handled to his standards, and you have one person accountable from start to finish.
+                Russell Brown doesn&apos;t just show up — he assesses, plans, decides, and leads the work on site. That direct involvement means problems are caught early, your belongings are handled to his standards, and you have one person accountable from start to finish.
               </p>
               <div className="mt-8 animate-on-scroll stagger-2">
                 <Link href="/contact#quote" className="btn-primary">

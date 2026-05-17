@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const proofPoints = [
-  { label: "Applied judgement on every move" },
-  { label: "Leads and decides on site" },
   { label: "12,000+ relocations" },
   { label: "Based in Cromwell" },
   { label: "One dedicated team" },
+  { label: "Direct accountability" },
+  { label: "Human first service" },
 ];
 
 export default function AboutRussell() {
@@ -19,14 +19,14 @@ export default function AboutRussell() {
               <div className="image-frame image-vignette aspect-[4/5]">
                 <Image
                   src="/images/generated/russell-portrait.webp"
-                  alt="Generated interim portrait of Russell Brown for the owner-led moving story"
-                fill
-                className="image-warm object-cover"
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                unoptimized
-              />
+                  alt="Generated interim portrait of Russell Brown for the Central Lakes Removals story"
+                  fill
+                  className="image-warm object-cover"
+                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  unoptimized
+                />
               </div>
-              
+
               <div className="absolute -top-4 -left-4 w-24 h-24 border border-[var(--brass-muted)] rounded-lg -z-10 opacity-30" />
             </div>
           </div>
@@ -35,24 +35,20 @@ export default function AboutRussell() {
           <div className="lg:col-span-7 space-y-8">
             <div>
               <span className="eyebrow mb-4 block animate-on-scroll">
-                About
+                About Russell
               </span>
               <h2 className="animate-on-scroll stagger-1">
-                Personally led by Russell Brown.
+                The standard has a name.
               </h2>
             </div>
 
             <div className="space-y-6 animate-on-scroll stagger-2">
               <p className="text-lg text-[var(--text-secondary)]">
-                Russell Brown has personally led more than 12,000 relocations — assessing risk, reading situations, and making the decisions that protect your belongings and your time.
+                Russell Brown has personally led more than 12,000 relocations. That experience shows in how a move is assessed, planned, adjusted, and followed through.
               </p>
-              
+
               <p className="text-lg text-[var(--text-secondary)]">
-                Russell is directly involved in the planning, communication, and physical execution of each move. That gives customers a level of accountability that is rare in the moving industry.
-              </p>
-              
-              <p className="text-lg text-[var(--text-secondary)]">
-                The result is a move where someone experienced is watching, thinking, and adjusting — not just lifting.
+                Central Lakes Removals is the business built around that standard: careful work, practical judgement, direct accountability, and a human first approach to moving.
               </p>
             </div>
 
