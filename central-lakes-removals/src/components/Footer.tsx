@@ -33,7 +33,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-4">
-              Premium owner-led moving services based in Cromwell, serving Central Otago and wider South Island routes.
+              Moving services built around Russell Brown&apos;s judgement and standards. Based in Cromwell, serving Central Otago and wider South Island routes.
             </p>
             <div className="flex items-center gap-2">
               <div className="w-1 h-8 bg-[var(--brass-primary)]" />

@@ -19,11 +19,11 @@ export default function FinalQuoteSection() {
 
             <div className="space-y-5 animate-on-scroll stagger-2">
               <p className="critical-copy hidden text-base sm:block lg:text-lg text-[var(--text-secondary)]">
-                Send through where you are moving from, where you are moving to, your preferred date, access notes, and the main items involved.
+                Russell will personally review your details, assess the practical requirements, and come back with a considered plan — not a generic estimate.
               </p>
 
               <p className="hidden text-[var(--text-secondary)] sm:block">
-                The more useful detail you provide, the easier it is to plan the job properly.
+                The more you share about access, timing, and what&apos;s being moved, the more accurately the job can be planned.
               </p>
             </div>
 
@@ -32,6 +32,7 @@ export default function FinalQuoteSection() {
               <p className="text-sm text-[var(--text-muted)] mb-3">
                 Prefer to talk directly?
               </p>
+              <p className="mt-4 text-xs text-[var(--text-muted)] italic">Russell personally reads every enquiry.</p>
               <a
                 href={`tel:${businessConfig.phoneTel}`}
                 className="btn-secondary inline-flex items-center gap-2"

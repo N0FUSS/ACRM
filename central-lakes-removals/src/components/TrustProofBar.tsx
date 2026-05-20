@@ -1,3 +1,6 @@
+import { businessConfig } from "@/lib/business-config";
+import { getReviewData } from "@/lib/structured-data";
+
 const proofPoints = [
   { 
     label: "Personally led by Russell Brown", 
@@ -9,7 +12,7 @@ const proofPoints = [
     )
   },
   { 
-    label: "12,000+ relocations", 
+    label: `${businessConfig.verifiedClaims.relocations} relocations`, 
     icon: (
       <svg className="w-3.5 h-3.5 text-[var(--brass-primary)]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
         <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -18,7 +21,8 @@ const proofPoints = [
     )
   },
   { 
-    label: "5.0 Google rating", 
+    label: "", // Filled dynamically with rating + count
+    isRating: true,
     icon: (
       <svg className="w-3.5 h-3.5 text-[var(--brass-primary)]" fill="currentColor" viewBox="0 0 24 24">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -47,7 +51,9 @@ const proofPoints = [
   },
 ];
 
-export default function TrustProofBar() {
+export default async function TrustProofBar() {
+  const { rating, reviewCount } = await getReviewData();
+
   return (
     <div className="bg-[var(--bg-secondary)] border-y border-[var(--border-subtle)] py-4">
       <div className="container">
@@ -62,7 +68,9 @@ export default function TrustProofBar() {
                 {point.icon}
               </div>
               <span className={index % 2 === 0 ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}>
-                {point.label}
+                {point.isRating
+                  ? `${rating} Google rating · ${reviewCount} reviews`
+                  : point.label}
               </span>
             </div>
           ))}

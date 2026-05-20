@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { businessConfig } from "@/lib/business-config";
+import { getReviewData } from "@/lib/structured-data";
 
 function GoogleStars() {
   return (
@@ -25,7 +26,9 @@ function GoogleIcon() {
   );
 }
 
-export default function Hero() {
+export default async function Hero() {
+  const { rating, reviewCount } = await getReviewData();
+
   return (
     <section className="relative flex items-start pt-12 pb-10 sm:min-h-[calc(100svh-5rem)] sm:items-center sm:py-10 lg:min-h-[calc(100svh-6rem)] lg:py-16">
       {/* Background gradient */}
@@ -66,7 +69,7 @@ export default function Hero() {
 
             {/* Body */}
             <p className="critical-copy text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-xl animate-on-scroll stagger-2">
-              Access, timing, stairs, fragile items, loading order, weather, settlement windows, and tight spaces can all change the outcome of a move. Central Lakes Removals is built around careful planning, practical judgement, and direct accountability from Russell Brown.
+              Access, timing, stairs, fragile items, loading order, weather, and settlement windows can all change the outcome of a move. Russell Brown assesses every job on site before anything is touched — then builds the load plan around what&apos;s actually in front of him, not a generic checklist. That&apos;s the difference between a move that&apos;s handled and a move that&apos;s handled properly.
             </p>
 
             {/* CTAs */}
@@ -86,8 +89,9 @@ export default function Hero() {
             <div className="pt-6 border-t border-[var(--border-subtle)] animate-on-scroll stagger-4 flex flex-wrap gap-x-6 gap-y-3 text-base text-[var(--text-muted)] font-medium">
               <span className="flex items-center gap-2">
                 <GoogleIcon />
-                <span className="text-[var(--text-primary)] font-semibold">5.0</span>
+                <span className="text-[var(--text-primary)] font-semibold">{rating}</span>
                 <GoogleStars />
+                <span className="text-sm">{reviewCount} reviews</span>
               </span>
               <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> 12,000+ Relocations</span>
               <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brass-muted)]"></span> Based in Cromwell</span>

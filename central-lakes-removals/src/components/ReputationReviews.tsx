@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getReviewData } from "@/lib/structured-data";
 
 function GoogleStars({ size = "w-5 h-5" }: { size?: string }) {
   return (
@@ -23,25 +24,6 @@ function GoogleIcon() {
   );
 }
 
-const proofBlocks = [
-  {
-    stat: "12,000+",
-    label: "Relocations",
-    description: "Hands on experience matters when the job becomes difficult, awkward, time sensitive, or more complex than expected.",
-  },
-  {
-    stat: "5.0",
-    label: "Google Rating",
-    description: "Consistent customer satisfaction built through care, communication, and dependable work.",
-    isGoogle: true,
-  },
-  {
-    stat: "Real",
-    label: "Customer Feedback",
-    description: "Reviews should show what customers actually experienced, not polished marketing claims.",
-  },
-];
-
 const reviewThemes = [
   "Careful handling",
   "Clear communication",
@@ -50,15 +32,35 @@ const reviewThemes = [
   "Professional and trustworthy",
 ];
 
-export default function ReputationReviews() {
+export default async function ReputationReviews() {
+  const { rating, reviewCount } = await getReviewData();
+
+  const proofBlocks = [
+    {
+      stat: "12,000+",
+      label: "Relocations",
+      description: "Hands-on experience matters when the job becomes difficult, awkward, time sensitive, or more complex than expected.",
+      isGoogle: false,
+    },
+    {
+      stat: rating,
+      label: "Google Rating",
+      description: "Consistent customer satisfaction built through care, communication, and dependable work.",
+      isGoogle: true,
+    },
+    {
+      stat: String(reviewCount),
+      label: "Google Reviews",
+      description: "Real feedback from real customers — not a curated highlight reel. Every review earned through the work.",
+      isGoogle: false,
+    },
+  ];
+
   return (
     <section className="section-padding section-brass-wash relative">
       <div className="container relative z-10">
-        {/* Section Header */}
         <div className="max-w-2xl mb-12 lg:mb-16">
-          <span className="eyebrow mb-4 block animate-on-scroll">
-            Reputation
-          </span>
+          <span className="eyebrow mb-4 block animate-on-scroll">Reputation</span>
           <h2 className="animate-on-scroll stagger-1">
             Care is easiest to trust when <span className="brass-gradient-text">other customers have seen it.</span>
           </h2>
@@ -67,61 +69,41 @@ export default function ReputationReviews() {
           </p>
         </div>
 
-        {/* Proof Blocks */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
           {proofBlocks.map((block, index) => (
-            <div
-              key={block.label}
-              className="text-center animate-on-scroll"
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
+            <div key={block.label} className="text-center animate-on-scroll" style={{ transitionDelay: `${index * 100}ms` }}>
               {block.isGoogle ? (
                 <div className="flex flex-col items-center mb-2">
                   <div className="flex items-center gap-2 mb-1">
                     <GoogleIcon />
-                    <span className="text-4xl lg:text-5xl font-heading font-semibold text-[var(--brass-primary)]">
-                      {block.stat}
-                    </span>
+                    <span className="text-4xl lg:text-5xl font-heading font-semibold text-[var(--brass-primary)]">{block.stat}</span>
                   </div>
                   <GoogleStars />
                 </div>
               ) : (
-                <div className="text-5xl lg:text-7xl font-heading font-semibold text-[var(--brass-primary)] mb-2">
-                  {block.stat}
-                </div>
+                <div className="text-5xl lg:text-7xl font-heading font-semibold text-[var(--brass-primary)] mb-2">{block.stat}</div>
               )}
-              <div className="text-sm font-medium text-[var(--text-primary)] uppercase mb-4">
-                {block.label}
-              </div>
-              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
-                {block.description}
-              </p>
+              <div className="text-sm font-medium text-[var(--text-primary)] uppercase mb-4">{block.label}</div>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{block.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Review Themes */}
         <div className="bg-[var(--bg-card)] border border-[var(--border-medium)] rounded-lg p-8 lg:p-12 animate-on-scroll">
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4">
             {reviewThemes.map((theme) => (
-              <span
-                key={theme}
-                className="px-4 py-2 bg-[var(--bg-elevated)] border border-[var(--border-medium)] rounded-full text-sm text-[var(--text-secondary)]"
-              >
+              <span key={theme} className="px-4 py-2 bg-[var(--bg-elevated)] border border-[var(--border-medium)] rounded-full text-sm text-[var(--text-secondary)]">
                 {theme}
               </span>
             ))}
           </div>
           <p className="text-center text-[var(--text-muted)] text-sm mt-6">
-            Real customer feedback from verified reviews
+            Real customer feedback from {reviewCount} verified Google reviews
           </p>
         </div>
 
-        {/* CTA */}
         <div className="mt-12 text-center animate-on-scroll">
-          <Link href="/reviews" className="btn-secondary">
-            Read Customer Reviews
-          </Link>
+          <Link href="/reviews" className="btn-secondary">Read Customer Reviews</Link>
         </div>
       </div>
     </section>

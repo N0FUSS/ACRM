@@ -18,6 +18,9 @@ export default function PremiumValue() {
             <p className="text-xl text-[var(--text-secondary)]">
               Damage, delays, rushed loading, settlement pressure, access problems, and avoidable confusion all carry a cost. Central Lakes Removals is built for customers who value their belongings, their time, and the confidence that the job is being handled properly.
             </p>
+            <p className="text-xl text-[var(--text-secondary)]">
+              People trust us with every item they own. That trust is not taken lightly — it drives every decision Russell makes on site, from the first assessment to the last box checked.
+            </p>
           </div>
 
           {/* Supporting Line */}

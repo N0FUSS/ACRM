@@ -13,8 +13,8 @@ const steps = [
   },
   {
     number: "3",
-    title: "The job is planned before arrival",
-    description: "The team arrives with the right equipment, a clear approach, and an understanding of the move day priorities.",
+    title: "Russell assesses and builds the load plan on site",
+    description: "Russell walks the full job on arrival — access, actual volumes, conditions, item types — then builds the load plan before anything is touched. The plan is built around what's actually there, not what was estimated.",
   },
   {
     number: "4",

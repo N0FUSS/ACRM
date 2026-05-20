@@ -9,6 +9,7 @@ interface FormData {
   email: string;
   movingFrom: string;
   movingTo: string;
+  urgency: string;
   preferredDate: string;
   moveType: string;
   mainItems: string;
@@ -31,6 +32,7 @@ export default function QuoteForm() {
     email: "",
     movingFrom: "",
     movingTo: "",
+    urgency: "",
     preferredDate: "",
     moveType: "",
     mainItems: "",
@@ -270,6 +272,25 @@ export default function QuoteForm() {
                 <p className="mt-1 text-sm text-red-600">{getFieldError("movingTo")}</p>
               )}
             </div>
+          </div>
+
+          {/* Urgency */}
+          <div>
+            <label htmlFor="urgency">How urgent is this move?</label>
+            <select
+              id="urgency"
+              name="urgency"
+              value={formData.urgency}
+              onChange={handleChange}
+              required
+              className={getFieldError("urgency") ? "border-red-500" : ""}
+            >
+              <option value="">Select urgency</option>
+              <option value="emergency">Emergency — within 72 hours</option>
+              <option value="urgent">Urgent — 4 to 10 days</option>
+              <option value="standard">Standard — 11+ days (most common)</option>
+            </select>
+            <p className="mt-2 text-xs text-[var(--text-muted)]">We regularly handle all three. This helps Russell plan the right response.</p>
           </div>
 
           {/* Continue button */}

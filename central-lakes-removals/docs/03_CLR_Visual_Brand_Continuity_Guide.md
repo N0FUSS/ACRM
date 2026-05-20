@@ -393,8 +393,8 @@ Russell standing beside or near the truck, in workwear, with controlled lighting
 
 Use these terms consistently:
 
-1. Russell Brown’s judgement
-2. Russell Brown’s standards
+1. Russell Brown's judgement
+2. Russell Brown's standards
 3. Applied experience
 4. Lived expertise
 5. Carefully planned
@@ -407,6 +407,11 @@ Use these terms consistently:
 12. Led by Russell Brown
 13. 12,000 plus relocations
 14. Human first moving
+15. On-site assessment
+16. Load plan
+17. Tiered loading (base, mid-stow, top-stow)
+18. People trust us with every item they own
+19. 103 Google reviews (check business-config.ts for current live figure)
 
 Use these terms carefully:
 

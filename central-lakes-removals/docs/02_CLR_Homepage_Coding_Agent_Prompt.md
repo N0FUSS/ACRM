@@ -217,7 +217,7 @@ A good move is decided before the heavy lifting starts.
 
 ### Hero body
 
-Access, timing, stairs, fragile items, loading order, weather, settlement windows, and tight spaces can all change the outcome of a move. Central Lakes Removals is built around careful planning, practical judgement, and direct accountability from Russell Brown, backed by more than 12,000 relocations.
+Access, timing, stairs, fragile items, loading order, weather, and settlement windows can all change the outcome of a move. Russell Brown assesses every job on site before anything is touched — then builds the load plan around what's actually in front of him, not a generic checklist. That's the difference between a move that's handled and a move that's handled properly.
 
 ### Primary CTA
 
@@ -229,9 +229,9 @@ Talk to Russell
 
 ### Proof line
 
-12,000 plus relocations. 5.0 Google rated. Family owned in Cromwell. Russell Brown on every move.
+12,000 plus relocations. 5.0 Google rated across 103 reviews. Family owned in Cromwell. Russell Brown on every move.
 
-Only use this proof line if accurate at time of publishing.
+Only use this proof line if accurate at time of publishing. Check business-config.ts for the current review count.
 
 ### Desktop layout
 
@@ -351,7 +351,7 @@ Judgement shows up in the small decisions.
 
 ### Body
 
-A move is shaped by dozens of practical calls: what comes out first, what needs protection, what should not be stacked, how to handle a tight corner, where time can be saved, and where rushing will cost more later.
+A move is shaped by dozens of practical calls. Every load is built in tiers — heavier cabinets as base, boxes for mid-stow, fragile items and chairs as top-stow — with each tier planned around the specific shapes, weights, and quantities in that particular move. No two load plans are the same because no two loads are.
 
 Russell Brown leads those decisions directly. That matters because the person making the calls is also the person accountable for the result.
 
@@ -687,15 +687,16 @@ The more detail you provide, the easier it is to plan your move accurately.
 
 1. Name
 2. Phone
-3. Email
-4. Moving from
-5. Moving to
-6. Preferred moving date
-7. Type of move
-8. Main items or inventory
-9. Access notes
-10. Packing help required
-11. Message
+3. Moving from
+4. Moving to
+5. How urgent is this move? (Emergency — within 72 hours / Urgent — 4 to 10 days / Standard — 11+ days)
+6. Email
+7. Preferred moving date
+8. Type of move
+9. Main items or inventory
+10. Access notes
+11. Packing help required
+12. Message
 
 ### Submit button
 

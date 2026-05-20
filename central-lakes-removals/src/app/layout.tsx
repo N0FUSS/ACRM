@@ -5,6 +5,7 @@ import {
   createLocalBusinessJsonLd,
   createMovingCompanyJsonLd,
   createPersonJsonLd,
+  createWebSiteJsonLd,
 } from "@/lib/structured-data";
 
 const headingFont = Cormorant_Garamond({
@@ -26,8 +27,8 @@ const bodyFont = Source_Sans_3({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://centrallakesremovals.co.nz"),
-  title: "Central Lakes Removals | Owner-Led Moving in Cromwell",
-  description: "Premium moving services led by Russell Brown. Based in Cromwell, serving Central Otago and the South Island. 12,000+ relocations. 5.0 Google rated.",
+  title: "Central Lakes Removals | Moving Led by Russell Brown — Cromwell",
+  description: "5.0 rated across 103 Google reviews. Moving services personally led by Russell Brown — based in Cromwell, serving Central Otago and the South Island. 12,000+ relocations. Every move assessed and planned before the truck arrives.",
   keywords: [
     "moving company",
     "removals",
@@ -38,12 +39,14 @@ export const metadata: Metadata = {
     "house moving",
     "furniture moving",
     "long distance moving",
-    "owner led"
+    "Russell Brown",
+    "owner led",
+    "moving specialist Cromwell"
   ],
   authors: [{ name: "Central Lakes Removals" }],
   openGraph: {
-    title: "Central Lakes Removals | Owner-Led Moving",
-    description: "Premium moving services personally led by Russell Brown. Based in Cromwell, serving Central Otago and the South Island.",
+    title: "Central Lakes Removals | Moving Led by Russell Brown — Cromwell",
+    description: "5.0 rated across 103 Google reviews. Personally led by Russell Brown. Based in Cromwell, serving Central Otago and the South Island. Every move planned before the truck arrives.",
     type: "website",
     locale: "en_NZ",
   },
@@ -58,6 +61,7 @@ export default function RootLayout({
     createLocalBusinessJsonLd(),
     createMovingCompanyJsonLd(),
     createPersonJsonLd(),
+    createWebSiteJsonLd(),
   ];
 
   return (

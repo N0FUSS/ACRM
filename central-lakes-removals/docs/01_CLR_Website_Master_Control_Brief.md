@@ -26,6 +26,46 @@ It is not the full differentiator by itself.
 
 The website must make this distinction clear.
 
+## 2.5. Russell's operating system
+
+This section documents how Russell actually works. Use it to write specific, credible copy.
+
+### On-site assessment
+
+Russell arrives on moving day and assesses the full job before anything is touched. The assessment covers: access, actual volumes, weather conditions, delivery schedules and locations, customer packing quality, and the unique combination of item types, shapes, sizes, and weights.
+
+### Load plan formulation
+
+The load plan is built on site, immediately after assessment. It is never a generic template — it is driven by the specific combination of items in front of Russell on that day. Every move is replanned for the last time on moving day.
+
+### Tiered loading system
+
+Loading follows a tiered stacking system:
+
+1. Base — larger wooden cabinets and heavy stable pieces (bottom of each tier)
+2. Mid-stow — boxes stacked on top of base
+3. Top-stow — fragile lighter boxes, dining chairs, bags (top of tier before starting again)
+
+When customers ask questions like "should we start with the beds?" Russell will answer after the assessment, not before. The answer is almost never to begin with a single category of item.
+
+### Optimisation hierarchy (Russell's KPIs)
+
+1. Best outcomes for the customer — primary
+2. Quality of work — second
+3. Efficiency — third, never at the expense of the first two
+
+### Trust philosophy
+
+Russell feels a deep sense of personal responsibility toward people who trust him with every item they own. He will quadruple-check every box — including the boxes no one else noticed or knew existed — to make sure that trust is more than deserved. This is the emotional core beneath all operational decisions.
+
+### Booking urgency tiers
+
+Russell regularly handles all three:
+
+1. Emergency — within 72 hours
+2. Urgent — 4 to 10 days
+3. Standard — 11+ days (most common)
+
 ## 3. Positioning hierarchy
 
 Use this hierarchy when writing, designing, structuring, or editing the site.
@@ -102,11 +142,12 @@ The website may use these claims only if accurate at time of publishing:
 
 1. 12,000 plus relocations
 2. 5.0 Google rating
-3. Family owned
-4. Based in Cromwell
-5. Personally led by Russell Brown
-6. One dedicated team
-7. Serving Central Otago and wider South Island routes
+3. 103 Google reviews (live count — check business-config.ts for current figure)
+4. Family owned
+5. Based in Cromwell
+6. Personally led by Russell Brown
+7. One dedicated team
+8. Serving Central Otago and wider South Island routes
 
 Do not invent review content.
 

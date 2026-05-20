@@ -14,7 +14,7 @@ export default function OwnerLedDifference() {
 
             <div className="space-y-6 animate-on-scroll stagger-1">
               <p className="text-lg text-[var(--text-secondary)]">
-                A move is shaped by dozens of practical calls: what comes out first, what needs protection, what should not be stacked, how to handle a tight corner, where time can be saved, and where rushing will cost more later.
+                A move is shaped by dozens of practical calls. Every load is built in tiers — heavier cabinets as base, boxes for mid-stow, fragile items and chairs as top-stow — with each tier planned around the specific shapes, weights, and quantities in that particular move. No two load plans are the same because no two loads are.
               </p>
 
               <p className="text-lg text-[var(--text-secondary)]">

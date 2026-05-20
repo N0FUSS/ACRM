@@ -27,7 +27,13 @@ export const businessConfig = {
   verifiedClaims: {
     relocations: "12,000+",
     googleRating: "5.0",
+    googleReviewCount: 103,
     familyOwned: true,
     ownerLed: true,
-  }
+  },
+  bookingUrgency: {
+    emergency: { label: "Emergency", detail: "Within 72 hours" },
+    urgent:    { label: "Urgent",    detail: "4 to 10 days"    },
+    standard:  { label: "Standard",  detail: "11+ days (most common)" },
+  },
 };

@@ -21,8 +21,8 @@ export default function Header() {
                 Central Lakes Removals
               </span>
               <span className="eyebrow hidden text-xs sm:block">
-                Owner Led Moving
-              </span>
+                  Russell Brown · Cromwell
+                </span>
             </span>
           </Link>
 
