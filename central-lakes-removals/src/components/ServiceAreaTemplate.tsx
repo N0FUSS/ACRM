@@ -25,7 +25,7 @@ export default function ServiceAreaTemplate({ location }: ServiceAreaTemplatePro
   ]);
 
   return (
-    <main className="flex-1">
+    <main id="main-content" className="flex-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

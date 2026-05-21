@@ -60,7 +60,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Header />
         
         {/* Hero */}

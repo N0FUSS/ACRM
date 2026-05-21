@@ -81,7 +81,7 @@ const contactMethods = [
 
 export default function ContactPage() {
   return (
-    <main className="flex-1">
+    <main id="main-content" className="flex-1">
       <Header />
 
       {/* Hero */}

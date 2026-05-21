@@ -67,7 +67,7 @@ const serviceAreas = [
 
 export default function ServiceAreasPage() {
   return (
-    <main className="flex-1">
+    <main id="main-content" className="flex-1">
       <Header />
         
         {/* Hero */}

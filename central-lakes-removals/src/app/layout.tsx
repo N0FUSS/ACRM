@@ -6,6 +6,7 @@ import {
   createMovingCompanyJsonLd,
   createPersonJsonLd,
 } from "@/lib/structured-data";
+import ScrollAnimationInit from "@/components/ScrollAnimationInit";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -63,11 +64,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
       <body className="min-h-full flex flex-col antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:bg-[var(--brass-primary)] focus:text-[var(--bg-primary)] focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-medium"
+        >
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <ScrollAnimationInit />
       </body>
     </html>
   );
