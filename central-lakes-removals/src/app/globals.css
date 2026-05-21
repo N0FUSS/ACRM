@@ -13,14 +13,14 @@
   --bg-elevated: #172033;
   
   /* Warm Accent System - Brass */
-  --brass-primary: #F59E0B;
-  --brass-warm: #F4B43D;
-  --brass-muted: #B87819;
-  --brass-deep: #F07A18;
-  --brass-soft: #F6A11A;
-  --brass-glow: rgba(245, 158, 11, 0.22);
+  --brass-primary: #B8954B;
+  --brass-warm: #C9A85A;
+  --brass-muted: #8A6F3A;
+  --brass-deep: #A07D3A;
+  --brass-soft: #CBAD60;
+  --brass-glow: rgba(184, 149, 75, 0.22);
   --brass-gradient: linear-gradient(135deg, var(--brass-soft) 0%, var(--brass-primary) 36%, var(--brass-warm) 58%, var(--brass-primary) 76%, var(--brass-deep) 100%);
-  --brass-gradient-subtle: linear-gradient(135deg, rgba(246, 161, 26, 0.2) 0%, rgba(245, 158, 11, 0.16) 48%, rgba(244, 180, 61, 0.2) 68%, rgba(240, 122, 24, 0.14) 100%);
+  --brass-gradient-subtle: linear-gradient(135deg, rgba(203, 173, 96, 0.2) 0%, rgba(184, 149, 75, 0.16) 48%, rgba(201, 168, 90, 0.2) 68%, rgba(160, 125, 58, 0.14) 100%);
   --typewriter-amber: var(--brass-primary);
   
   /* Text Hierarchy - Warm Off-White */
@@ -197,11 +197,11 @@ p {
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: 0;
-  border: 2px solid rgba(245, 158, 11, 0.76);
+  border: 2px solid rgba(184, 149, 75, 0.76);
   border-radius: 4px;
   cursor: pointer;
   background-size: 180% 180%;
-  box-shadow: inset 0 1px 0 rgba(255, 231, 160, 0.24), 0 10px 28px rgba(245, 158, 11, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 231, 160, 0.24), 0 10px 28px rgba(184, 149, 75, 0.1);
   transition: all var(--transition-normal), background-position 500ms ease;
 }
 

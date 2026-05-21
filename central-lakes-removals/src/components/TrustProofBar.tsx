@@ -45,6 +45,16 @@ const proofPoints = [
       </svg>
     )
   },
+  { 
+    label: "Serving the Lower South Island", 
+    icon: (
+      <svg className="w-3.5 h-3.5 text-[var(--brass-primary)]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    )
+  },
 ];
 
 export default function TrustProofBar() {
