@@ -195,10 +195,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${location.name} Movers | Central Lakes Removals`,
-    description: `Professional moving services in ${location.name}. ${location.description}`,
+    description: `Professional moving services in ${location.name}, ${location.region}. ${location.description.slice(0, 140)}`,
     openGraph: {
       title: `${location.name} Movers | Central Lakes Removals`,
-      description: `Professional moving services in ${location.name}. Led by Russell Brown — 12,000+ relocations.`,
+      description: `Professional moving services in ${location.name}. Led by Russell Brown — 12,000+ relocations. Based in Cromwell, Central Otago.`,
+    },
+    alternates: {
+      canonical: `https://centrallakesremovals.co.nz/service-areas/${location.slug}`,
     },
   };
 }

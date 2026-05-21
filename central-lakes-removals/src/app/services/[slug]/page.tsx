@@ -206,10 +206,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${service.name} | Central Lakes Removals`,
-    description: service.tagline,
+    description: `${service.tagline} Every move personally led by Russell Brown. Based in Cromwell, Central Otago.`,
     openGraph: {
       title: `${service.name} | Central Lakes Removals`,
-      description: service.tagline,
+      description: `${service.tagline} Led by Russell Brown — 12,000+ relocations.`,
+    },
+    alternates: {
+      canonical: `https://centrallakesremovals.co.nz/services/${service.slug}`,
     },
   };
 }
