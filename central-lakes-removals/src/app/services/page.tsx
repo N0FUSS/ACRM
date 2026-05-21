@@ -5,7 +5,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Moving Services | Central Lakes Removals",
-  description: "Professional moving services including house moving, furniture moving, long distance moving, and packing services. All moves personally led by Russell Brown.",
+  description:
+    "Professional moving services including house moving, furniture moving, long distance moving, and packing services. All moves personally led by Russell Brown.",
+  openGraph: {
+    title: "Moving Services | Central Lakes Removals",
+    description:
+      "House moving, furniture moving, long distance, packing, and commercial relocations. Every move led by Russell Brown.",
+  },
 };
 
 const services = [

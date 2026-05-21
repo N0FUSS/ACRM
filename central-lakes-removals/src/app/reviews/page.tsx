@@ -6,7 +6,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Customer Reviews | Central Lakes Removals",
-  description: "Read what customers say about Central Lakes Removals. Trusted by people who want their move done properly. 5.0 Google rating with consistent 5-star reviews.",
+  description:
+    "Read what customers say about Central Lakes Removals. Trusted by people who want their move done properly. 5.0 Google rating with consistent 5-star reviews.",
+  openGraph: {
+    title: "Customer Reviews | Central Lakes Removals",
+    description:
+      "5.0 Google rated. Read what customers say about Russell Brown and Central Lakes Removals.",
+  },
 };
 
 const reviewThemes = [

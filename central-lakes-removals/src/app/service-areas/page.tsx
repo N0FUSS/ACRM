@@ -5,7 +5,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Service Areas | Central Lakes Removals",
-  description: "Central Lakes Removals is based in Cromwell and provides moving services across Central Otago and the wider South Island including Queenstown, Wanaka, Christchurch, Dunedin, and Invercargill.",
+  description:
+    "Central Lakes Removals is based in Cromwell and provides moving services across Central Otago and the wider South Island including Queenstown, Wanaka, Christchurch, Dunedin, and Invercargill.",
+  openGraph: {
+    title: "Service Areas | Central Lakes Removals",
+    description:
+      "Based in Cromwell, serving Central Otago and the South Island. Queenstown, Wanaka, Alexandra, Christchurch, Dunedin, Invercargill.",
+  },
 };
 
 const serviceAreas = [

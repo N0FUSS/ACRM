@@ -7,7 +7,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "About Russell Brown | Central Lakes Removals",
-  description: "Meet Russell Brown, owner and operator of Central Lakes Removals. With over 12,000 relocations and personally led moves, Russell brings experienced judgement and direct accountability to every move.",
+  description:
+    "Meet Russell Brown, owner and operator of Central Lakes Removals. With over 12,000 relocations and personally led moves, Russell brings experienced judgement and direct accountability to every move.",
+  openGraph: {
+    title: "About Russell Brown | Central Lakes Removals",
+    description:
+      "Meet the person who leads every move. Russell Brown — 12,000+ relocations, 5.0 Google rated.",
+  },
 };
 
 const milestones = [
