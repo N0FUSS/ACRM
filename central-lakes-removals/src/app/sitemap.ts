@@ -27,8 +27,12 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
-    lastModified: new Date("2026-05-04"),
+    lastModified: new Date("2026-05-21"),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
+    priority: route === ""
+      ? 1
+      : route.startsWith("/services/") || route.startsWith("/service-areas/")
+        ? 0.7
+        : 0.8,
   }));
 }

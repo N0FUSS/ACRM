@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { businessConfig } from "@/lib/business-config";
+import { createBreadcrumbJsonLd, createServiceJsonLd } from "@/lib/structured-data";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TypewriterText from "@/components/TypewriterText";
@@ -18,8 +19,23 @@ interface ServiceTemplateProps {
 }
 
 export default function ServiceTemplate({ service }: ServiceTemplateProps) {
+  const breadcrumbJsonLd = createBreadcrumbJsonLd([
+    { name: "Home", url: "https://centrallakesremovals.co.nz" },
+    { name: "Services", url: "https://centrallakesremovals.co.nz/services" },
+    { name: service.name, url: `https://centrallakesremovals.co.nz/services/${service.slug}` },
+  ]);
+  const serviceJsonLd = createServiceJsonLd({
+    name: service.name,
+    slug: service.slug,
+    description: service.tagline,
+  });
+
   return (
     <main className="flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbJsonLd, serviceJsonLd]) }}
+      />
       <Header />
         
         {/* Hero Section */}

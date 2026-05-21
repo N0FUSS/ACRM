@@ -24,9 +24,18 @@ export function createLocalBusinessJsonLd() {
       "Owner-led moving services based in Cromwell, serving Central Otago and wider South Island routes.",
     address: businessAddress,
     areaServed: serviceArea,
+    priceRange: "$$",
     founder: {
       "@id": `${siteUrl}/#russell-brown`,
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "50",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    image: `${siteUrl}/images/generated/russell-portrait.webp`,
   };
 }
 
@@ -41,11 +50,48 @@ export function createMovingCompanyJsonLd() {
     email: businessConfig.email,
     address: businessAddress,
     areaServed: serviceArea,
+    priceRange: "$$",
     makesOffer: [
-      "House moving",
-      "Furniture moving",
-      "Long distance moving",
-      "Packing services",
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "House Moving",
+          url: `${siteUrl}/services/house-moving`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Furniture Moving",
+          url: `${siteUrl}/services/furniture-moving`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Long Distance Moving",
+          url: `${siteUrl}/services/long-distance`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Packing Services",
+          url: `${siteUrl}/services/packing`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Office & Commercial Relocations",
+          url: `${siteUrl}/services/office-commercial-relocations`,
+        },
+      },
     ],
   };
 }
@@ -60,5 +106,56 @@ export function createPersonJsonLd() {
     worksFor: {
       "@id": `${siteUrl}/#moving-company`,
     },
+    image: `${siteUrl}/images/generated/russell-portrait.webp`,
+  };
+}
+
+export function createBreadcrumbJsonLd(
+  items: { name: string; url: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function createServiceJsonLd(service: {
+  name: string;
+  slug: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.name,
+    description: service.description,
+    url: `${siteUrl}/services/${service.slug}`,
+    provider: {
+      "@id": `${siteUrl}/#moving-company`,
+    },
+    areaServed: serviceArea,
+  };
+}
+
+export function createFAQJsonLd(
+  faqs: { question: string; answer: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }
